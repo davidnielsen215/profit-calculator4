@@ -3,7 +3,7 @@ import StoreType from './StoreType'
 import AnnualSales from './AnnualSales'
 import NetProfit from './NetProfit'
 import LastYear from './LastYear'
-import LoseInternet from './LoseInternet'
+// import LoseInternet from './LoseInternet'
 import LandingPage from './LandingPage'
 import Calculation from './Calculation'
 
@@ -26,6 +26,27 @@ export class UserForm extends Component {
         this.setState({
           step: step + 1
         })
+    }
+
+    internetLoss = () => {
+        const { storeType} = this.state
+        if (storeType === "Snowboard Shop"){
+            this.setState({
+                loseInternet: "35%"
+            })
+        } if  (storeType === "Ski Shop"){
+            this.setState({
+                loseInternet: "15%"
+            })
+        } if  (storeType === "Ski + Snowboard Shop"){
+            this.setState({
+                loseInternet: "25%"
+            })
+        } if  (storeType === "Outdoor Gear + Wear"){
+            this.setState({
+                loseInternet: "15%"
+            })
+        }
     }
 
     // Go to previous step
@@ -97,6 +118,7 @@ export class UserForm extends Component {
                 return(
                     <StoreType
                     nextStep={this.nextStep}
+                    internetLoss={this.internetLoss}
                     handleChange={this.handleChange}
                     values={values}/>
                 )
@@ -122,19 +144,20 @@ export class UserForm extends Component {
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
-                    values={values}/>
-                )
-            case 6:
-                return (
-                    <LoseInternet 
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
                     values={values}
-                    setResult={this.setResult}
-                    />
+                    setResult={this.setResult}/>
                 )
-            case 7:
+            // case 6:
+            //     return (
+            //         <LoseInternet 
+            //         nextStep={this.nextStep}
+            //         prevStep={this.prevStep}
+            //         handleChange={this.handleChange}
+            //         values={values}
+            //         setResult={this.setResult}
+            //         />
+            //     )
+            case 6:
                 return (
                     <Calculation
                     restart={this.restart}

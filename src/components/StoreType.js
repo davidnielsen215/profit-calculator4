@@ -17,8 +17,11 @@ import '../LandingPage.css'
 
 export class StoreType extends Component {
     continue = e => {
+        // const {values} = this.props
         e.preventDefault()
         this.props.nextStep()
+        this.props.internetLoss()
+        
     }
 
     getStep = (x) => {
@@ -42,7 +45,7 @@ export class StoreType extends Component {
                     <br></br>
                 <Card className='card'>
                     <CardContent>
-                    <h4>Step {this.getStep(values.step)} of 5</h4>
+                    <h4>Step {this.getStep(values.step)} of 4</h4>
                     <br/>
                     {/* <div className="progress"> */}
                     {/* <ProgressBar animated now={20}/> */}

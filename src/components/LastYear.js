@@ -9,6 +9,7 @@ export class LastYear extends Component {
     continue = e => {
         e.preventDefault()
         this.props.nextStep()
+        this.props.setResult()
     }
 
     back = e =>{
@@ -56,7 +57,7 @@ export class LastYear extends Component {
                     <br></br>
                     <Card className="card">
                     <CardContent>
-                    <h4>Step {this.getStep(values.step)} of 5</h4>
+                    <h4>Step {this.getStep(values.step)} of 4</h4>
                     <br/>
                     <FormControl component="fieldset" >
                     <RadioGroup onChange={handleChange('lastYear')} defaultValue={values.lastYear}>

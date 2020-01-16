@@ -59,7 +59,7 @@ export class NetProfit extends Component {
                     <br></br>
                     <Card className='card'>
                     <CardContent>
-                    <h4>Step {this.getStep(values.step)} of 5</h4>
+                    <h4>Step {this.getStep(values.step)} of 4</h4>
                     <br/>
                     <FormControl component="fieldset" >
                     <RadioGroup onChange={handleChange('netProfit')} defaultValue={values.netProfit}>

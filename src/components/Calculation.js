@@ -49,7 +49,8 @@ class Calculation extends Component {
                     </Paper>
                     <br></br>
                     <Paper elevation={3}>
-                        <h3>Amount lost to Internet</h3>
+                        <h3>Amount lost to Internet </h3>
+                        <p>PND {values.loseInternet} based on industry average</p>
                         <h2 style={{color: '#6f1502'}}>${this.withCommas(values.result)}</h2>
                         <br/>
                     </Paper>
