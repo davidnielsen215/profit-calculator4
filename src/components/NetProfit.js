@@ -51,7 +51,7 @@ export class NetProfit extends Component {
             <MuiThemeProvider>
                 <React.Fragment>
                 <AppBar position='static' style={{backgroundColor: '#151856' }}>
-                        <Typography variant="h4" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
+                        <Typography variant="h5" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
                             Previous Net Profit
                         </Typography>
                     </AppBar>           
