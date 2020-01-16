@@ -103,7 +103,7 @@
     }
 
     .lastbackground{
-        height: 100vh;
+        height: 100%;
         background: radial-gradient(circle, rgba(64,69,84,1) 0%, rgba(31,33,40,1) 100%);
     }
     .card{
