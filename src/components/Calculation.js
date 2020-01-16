@@ -100,7 +100,7 @@ const styles = {
         backgroundColor: '#6f1502'
     },
     input: {
-        width: '55%'
+        width: '75%'
     }
     
 }

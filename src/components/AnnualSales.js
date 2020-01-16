@@ -85,16 +85,19 @@ export class AnnualSales extends Component {
                         <FormControlLabel value="2500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$2M - $3M" />
                         <FormControlLabel value="4000000" disabled={isDisabled} control={<Radio color="primary"/>} label="$3M - $5M" />
                         <FormControlLabel value="7500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$5M - $10M" />
-                        <TextField
+                        
+                    </RadioGroup>
+                    </FormControl>
+                    <br/>
+                    <TextField
                             label="Other (Numbers Only)"
+                            className='other'
                             onChange={handleChange('annualSales')}
                             id="formatted-numberformat-input"
                             InputProps={{
                                 inputComponent: this.NumberFormatCustom1
                             }}
                         />
-                    </RadioGroup>
-                    </FormControl>
                     <br/>
                     <Button 
                         style={styles.button2}

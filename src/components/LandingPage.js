@@ -34,7 +34,7 @@ export class LandingPage extends Component {
 const styles = {
     button: {
         color: 'white',
-        minWidth: '30%',
+        minWidth: '50%',
         margin: 25,
         backgroundColor: '#6f1502'
     },

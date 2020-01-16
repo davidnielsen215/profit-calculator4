@@ -67,16 +67,19 @@ export class LastYear extends Component {
                         <FormControlLabel value="25.5%" control={<Radio color="primary"/>} label="21% - 30%" />
                         <FormControlLabel value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
                         <FormControlLabel value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />
-                        <TextField
+                        
+                    </RadioGroup>
+                    </FormControl>
+                    <br/>
+                    <TextField
                             label="Other (Numbers Only)"
+                            className="other"
                             onChange={handleChange('lastYear')}
                             id="formatted-numberformat-input"
                             InputProps={{
                                 inputComponent: this.NumberFormatCustom1,
                             }}
                         />
-                    </RadioGroup>
-                    </FormControl>
                     <br/>
                     <Button 
                         style={styles.button2}

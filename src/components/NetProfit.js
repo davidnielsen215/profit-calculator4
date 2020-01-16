@@ -70,16 +70,19 @@ export class NetProfit extends Component {
                         <FormControlLabel value="8.45%" control={<Radio color="primary"/>} label="7.0% - 9.9%" />
                         <FormControlLabel value="11.45%" control={<Radio color="primary"/>} label="10.0% - 12.9%" />
                         <FormControlLabel value="14.45%" control={<Radio color="primary"/>} label="13.0% - 15.9%" />
-                        <TextField
+                        
+                    </RadioGroup>
+                    </FormControl>
+                    <br/>
+                    <TextField
                             label="Other (Numbers Only)"
+                            className='other'
                             onChange={handleChange('netProfit')}
                             id="formatted-numberformat-input"
                             InputProps={{
                                 inputComponent: this.NumberFormatCustom1,
                             }}
                         />
-                    </RadioGroup>
-                    </FormControl>
                     <br/>
                     <Button 
                         style={styles.button2}
