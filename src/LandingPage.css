@@ -158,6 +158,11 @@
         width: 80%
     }
 
+    .lastbackground{
+        height: 100%;
+        background: radial-gradient(circle, rgba(64,69,84,1) 0%, rgba(31,33,40,1) 100%);
+    }
+
     .container{
         margin-top: 0px; 
         color: white;

@@ -38,12 +38,14 @@ class Calculation extends Component {
                     {/* <br/> */}
                     <Paper elevation={3}>
                         <h3>Annual Sales</h3>
+                        <br/>
                         <h2 style={{color: 'green'}}>${this.withCommas(values.annualSales)}</h2>
                         <br/>
                     </Paper>
                     <br></br>
                     <Paper elevation={3}>
                         <h3>Additional Profit</h3>
+                        <br/>
                         <h2 style={{color: 'green'}}>${this.withCommas(values.result3)}</h2>
                         <br/>
                     </Paper>
@@ -51,12 +53,14 @@ class Calculation extends Component {
                     <Paper elevation={3}>
                         <h3>Amount lost to Internet </h3>
                         <p>PND {values.loseInternet} based on industry average</p>
+                        <br/>
                         <h2 style={{color: '#6f1502'}}>${this.withCommas(values.result)}</h2>
                         <br/>
                     </Paper>
                     <br></br>
                     <Paper elevation={3}>
                         <h3>Potential Market Share Increase</h3>
+                        <br/>
                         <h2 style={{color: 'blue'}}>${this.withCommas(values.result2)}</h2>
                         <br/>
                     </Paper>
