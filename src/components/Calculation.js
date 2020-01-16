@@ -28,7 +28,7 @@ class Calculation extends Component {
                 </AppBar>    */}
                 <br></br>
                 <br></br>
-                <Card style={{maxWidth: '95%', display: 'inline-block', marginTop: '1%'}}>
+                <Card className='card'>
                     <CardContent>
             
                     <img className='lastlogo' src={EntireLogo} alt=""/>
@@ -46,7 +46,7 @@ class Calculation extends Component {
                     <Paper elevation={3}>
                         <h3>Additional Profit</h3>
                         <br/>
-                        <h2 style={{color: 'green'}}>${this.withCommas(values.result3)}</h2>
+                        <h1 style={{color: 'green', fontSize: '40px'}}>${this.withCommas(values.result3)}</h1>
                         <br/>
                     </Paper>
                     <br></br>
@@ -64,8 +64,7 @@ class Calculation extends Component {
                         <h2 style={{color: 'blue'}}>${this.withCommas(values.result2)}</h2>
                         <br/>
                     </Paper>
-                    <Button onClick={this.restart} style={styles.button2}>Restart</Button>
-                    <br></br>
+                    <br/>
                     <h4>Email Results</h4>
                     <br></br>
                     <TextField
@@ -73,10 +72,13 @@ class Calculation extends Component {
                     onChange={handleChange('Email')}
                     // id="outlined-basic"
                     variant="outlined"
-                    style={styles.input}
+                    className="email"
                     />
                     <br></br>
                     <Button style={styles.button}>Send</Button>
+                    <br/>
+                    <Button onClick={this.restart} style={styles.button2}>Restart</Button>
+                    <br/>
                     </CardContent>
                 </Card>
                 </React.Fragment>
@@ -98,9 +100,6 @@ const styles = {
         minWidth: '30%',
         margin: 25,
         backgroundColor: '#6f1502'
-    },
-    input: {
-        width: '75%'
     }
     
 }

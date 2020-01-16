@@ -58,6 +58,7 @@
 }
 
 .card{
+    max-width: 75%;
     min-width: 45%;
     display: inline-block;
     box-shadow: 6px 6px;
@@ -82,7 +83,11 @@
 }
 
 .other{
-    width: 25%;
+    width: 40%;
+}
+
+.email{
+    width: 35%
 }
 
 
@@ -153,6 +158,9 @@
     .other{
         width: 35%;
     }
+    .email{
+        width: 45%
+    }
 }
 
 @media (max-width: 500px){
@@ -209,5 +217,8 @@
     }
     .other{
         width: 55%;
+    }
+    .email{
+        width: 65%
     }
 }
