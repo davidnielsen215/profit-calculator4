@@ -88,8 +88,23 @@
     .maincont{
         display: inline-block;
     }
+    .title{
+        font-size: 65px;
+        padding: 20px;
+        padding-top: 10%;
+    }
     .question{
-        font-size: 35px;
+        font-size: 55px;
+        padding: 20px;
+        padding-top: 15px;
+    }
+    .statement{
+        font-size: 25px;
+        padding: 30px;
+    }
+
+    .statement2{
+        font-size: 30px;
         padding: 20px;
     }
 
@@ -103,11 +118,12 @@
     }
 
     .lastbackground{
-        height: 100%;
+        height: 120vh;
         background: radial-gradient(circle, rgba(64,69,84,1) 0%, rgba(31,33,40,1) 100%);
     }
     .card{
-        max-width: 65%;
+        min-width: 75%;
+        min-height: 30%;
         display: inline-block;
         box-shadow: 6px 6px;
     }
@@ -141,6 +157,11 @@
         font-size: 30px;
         padding: 20px;
         padding-top: 30%;
+    }
+    .card{
+        min-width: 95%;
+        display: inline-block;
+        box-shadow: 6px 6px;
     }
 
     .logo{

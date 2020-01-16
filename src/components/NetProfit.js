@@ -52,7 +52,7 @@ export class NetProfit extends Component {
                 <React.Fragment>
                 <AppBar position='static' style={{backgroundColor: '#151856' }}>
                         <Typography variant="h4" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                            What was your net profit (%) from previous year
+                            Previous Net Profit
                         </Typography>
                     </AppBar>           
                     <br></br>
@@ -60,6 +60,8 @@ export class NetProfit extends Component {
                     <Card className='card'>
                     <CardContent>
                     <h4>Step {this.getStep(values.step)} of 4</h4>
+                    <br/>
+                    <h3>What was your net profit (%) from previous year? </h3>
                     <br/>
                     <FormControl component="fieldset" >
                     <RadioGroup onChange={handleChange('netProfit')} defaultValue={values.netProfit}>
@@ -69,7 +71,7 @@ export class NetProfit extends Component {
                         <FormControlLabel value="11.45%" control={<Radio color="primary"/>} label="10.0% - 12.9%" />
                         <FormControlLabel value="14.45%" control={<Radio color="primary"/>} label="13.0% - 15.9%" />
                         <TextField
-                            label="Other Amount"
+                            label="Other (Numbers Only)"
                             onChange={handleChange('netProfit')}
                             id="formatted-numberformat-input"
                             InputProps={{

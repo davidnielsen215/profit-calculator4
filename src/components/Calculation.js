@@ -28,7 +28,7 @@ class Calculation extends Component {
                 </AppBar>    */}
                 <br></br>
                 <br></br>
-                <Card style={{maxWidth: '75%', display: 'inline-block', marginTop: '1%'}}>
+                <Card style={{maxWidth: '95%', display: 'inline-block', marginTop: '1%'}}>
                     <CardContent>
             
                     <img className='lastlogo' src={EntireLogo} alt=""/>

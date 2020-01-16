@@ -65,7 +65,7 @@ export class AnnualSales extends Component {
                 <React.Fragment>
                 <AppBar position='static' style={{backgroundColor: '#151856' }}>
                         <Typography variant="h4" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                            Select range for store's annual sales
+                            Annual Sales
                         </Typography>
                     </AppBar>                    
                     <br></br>
@@ -73,6 +73,8 @@ export class AnnualSales extends Component {
                     <Card className='card'>
                     <CardContent>
                     <h4>Step {this.getStep(values.step)} of 4</h4>
+                    <br/>
+                    <h3>Select Range for Store's Annual Sales </h3>
                     <br/>
                     <FormControl >
                     <RadioGroup onChange={handleChange('annualSales')} defaultValue={values.annualSales}>
@@ -84,7 +86,7 @@ export class AnnualSales extends Component {
                         <FormControlLabel value="4000000" disabled={isDisabled} control={<Radio color="primary"/>} label="$3M - $5M" />
                         <FormControlLabel value="7500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$5M - $10M" />
                         <TextField
-                            label="Other Amount"
+                            label="Other (Numbers Only)"
                             onChange={handleChange('annualSales')}
                             id="formatted-numberformat-input"
                             InputProps={{

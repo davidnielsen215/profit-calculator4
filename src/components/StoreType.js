@@ -36,8 +36,8 @@ export class StoreType extends Component {
             <MuiThemeProvider>
                 <React.Fragment>
                     <AppBar position='static' style={{backgroundColor: '#151856' }}>
-                        <Typography variant="h4" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                            What type of retail store do you have?
+                        <Typography variant="h5" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
+                            Store Type
                         </Typography>
                     </AppBar>
                     
@@ -45,11 +45,9 @@ export class StoreType extends Component {
                     <br></br>
                 <Card className='card'>
                     <CardContent>
-                    <h4>Step {this.getStep(values.step)} of 4</h4>
+                    <p>Step {this.getStep(values.step)} of 4</p>
                     <br/>
-                    {/* <div className="progress"> */}
-                    {/* <ProgressBar animated now={20}/> */}
-                    {/* </div> */}
+                    <h3>What Type of Retail Store do you have?</h3>
                     <br/>
                     <FormControl component="fieldset" >
                     <RadioGroup onChange={handleChange('storeType')} defaultValue={values.storeType}>

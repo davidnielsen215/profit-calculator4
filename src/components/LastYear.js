@@ -50,7 +50,7 @@ export class LastYear extends Component {
                 <React.Fragment>
                 <AppBar position='static' style={{backgroundColor: '#151856' }}>
                         <Typography variant="h4" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                        What (%) of your sales were last year’s product?
+                        Last Year's Product
                         </Typography>
                     </AppBar>   
                     <br></br>
@@ -59,6 +59,8 @@ export class LastYear extends Component {
                     <CardContent>
                     <h4>Step {this.getStep(values.step)} of 4</h4>
                     <br/>
+                    <h3>What (%) of your sales were last year’s product? </h3>
+                    <br/>
                     <FormControl component="fieldset" >
                     <RadioGroup onChange={handleChange('lastYear')} defaultValue={values.lastYear}>
                         <FormControlLabel value="15%" control={<Radio color="primary"/>} label="10% - 20%" />
@@ -66,7 +68,7 @@ export class LastYear extends Component {
                         <FormControlLabel value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
                         <FormControlLabel value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />
                         <TextField
-                            label="Other Amount"
+                            label="Other (Numbers Only)"
                             onChange={handleChange('lastYear')}
                             id="formatted-numberformat-input"
                             InputProps={{
