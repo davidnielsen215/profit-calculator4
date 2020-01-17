@@ -21,11 +21,6 @@ class Calculation extends Component {
             <div className="lastbackground">
                 <MuiThemeProvider>
                 <React.Fragment>
-                {/* <AppBar position='static' style={{backgroundColor: '#151856' }}>
-                        <Typography variant="h4" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                            Results
-                        </Typography>
-                </AppBar>    */}
                 <br></br>
                 <br></br>
                 <Card className='card'>
@@ -37,21 +32,21 @@ class Calculation extends Component {
                     <br/>
                     {/* <br/> */}
                     <Paper elevation={3}>
-                        <h3>Annual Sales</h3>
+                        <h3>Current Annual Sales</h3>
                         <br/>
                         <h2 style={{color: 'green'}}>${this.withCommas(values.annualSales)}</h2>
                         <br/>
                     </Paper>
                     <br></br>
                     <Paper elevation={3}>
-                        <h3>Additional Profit</h3>
+                        <h3>Additional BDR Profit</h3>
                         <br/>
                         <h1 style={{color: 'green', fontSize: '40px'}}>${this.withCommas(values.result3)}</h1>
                         <br/>
                     </Paper>
                     <br></br>
                     <Paper elevation={3}>
-                        <h3>Amount lost to Internet </h3>
+                        <h3>Current Amount Lost to Internet</h3>
                         <p>PND {values.loseInternet} based on industry average</p>
                         <br/>
                         <h2 style={{color: '#6f1502'}}>${this.withCommas(values.result)}</h2>
@@ -59,7 +54,7 @@ class Calculation extends Component {
                     </Paper>
                     <br></br>
                     <Paper elevation={3}>
-                        <h3>Potential Market Share Increase</h3>
+                        <h3>Potential Market Share Maximum</h3>
                         <br/>
                         <h2 style={{color: 'blue'}}>${this.withCommas(values.result2)}</h2>
                         <br/>
@@ -70,7 +65,6 @@ class Calculation extends Component {
                     <TextField
                     label="Email"
                     onChange={handleChange('Email')}
-                    // id="outlined-basic"
                     variant="outlined"
                     className="email"
                     />
