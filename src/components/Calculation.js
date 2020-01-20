@@ -16,7 +16,7 @@ class Calculation extends Component {
 
     enter = () => {
         this.props.hubSpot()
-        alert('Information Saved')
+        alert('Information Submitted')
     }
 
     render() {
@@ -64,7 +64,7 @@ class Calculation extends Component {
                         <br/>
                     </Paper>
                     <br/>
-                    <h4>Email Results</h4>
+                    <h4>Enter email to be sent results</h4>
                     <br></br>
                     <TextField
                     label="Email"
@@ -93,7 +93,7 @@ class Calculation extends Component {
                     className="email"
                     />
                     <br></br>
-                    <Button onClick={this.enter} style={styles.button}>Send</Button>
+                    <Button onClick={this.enter} style={styles.button}>Submit</Button>
                     <br/>
                     <Button onClick={this.restart} style={styles.button2}>Restart</Button>
                     <br/>
