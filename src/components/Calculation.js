@@ -3,8 +3,6 @@ import { MuiThemeProvider, Button,
         TextField, Card, CardContent, Paper } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
 
-
-
 class Calculation extends Component {
 
     withCommas = (x) => {
@@ -15,6 +13,12 @@ class Calculation extends Component {
         e.preventDefault()
         this.props.restart()
     }
+
+    enter = () => {
+        this.props.hubSpot()
+        alert('Information Saved')
+    }
+
     render() {
         const { values, handleChange } = this.props
         return (
@@ -64,12 +68,32 @@ class Calculation extends Component {
                     <br></br>
                     <TextField
                     label="Email"
-                    onChange={handleChange('Email')}
+                    onChange={handleChange('email')}
+                    variant="outlined"
+                    className="email"
+                    />
+                    <TextField
+                    label="First Name"
+                    onChange={handleChange('firstName')}
+                    variant="outlined"
+                    className="email"
+                    />
+                    <br/>
+                    <TextField
+                    label="Company Name"
+                    onChange={handleChange('company')}
+                    variant="outlined"
+                    className="email"
+                    />
+                   
+                    <TextField
+                    label="Phone Number"
+                    onChange={handleChange('phone')}
                     variant="outlined"
                     className="email"
                     />
                     <br></br>
-                    <Button style={styles.button}>Send</Button>
+                    <Button onClick={this.enter} style={styles.button}>Send</Button>
                     <br/>
                     <Button onClick={this.restart} style={styles.button2}>Restart</Button>
                     <br/>

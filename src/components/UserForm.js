@@ -6,6 +6,8 @@ import LastYear from './LastYear'
 // import LoseInternet from './LoseInternet'
 import LandingPage from './LandingPage'
 import Calculation from './Calculation'
+import Axios from 'axios'
+
 
 export class UserForm extends Component {
     state = {
@@ -17,7 +19,10 @@ export class UserForm extends Component {
         loseInternet: '',
         result: '',
         result2: '',
-        email: ''
+        email: '',
+        firstName: '',
+        company: '',
+        phone: ''
     }
 
     // Proceed to next step
@@ -60,15 +65,18 @@ export class UserForm extends Component {
     restart = () => {
         this.setState({
             step: 1,
-            storeType: '',
-            annualSales: '',
-            netProfit: '',
-            lastYear: '',
-            loseInternet: '',
-            result: '',
-            result2: '',
-            result3: '',
-            email: ''
+        storeType: '',
+        annualSales: '',
+        netProfit: '',
+        lastYear: '',
+        loseInternet: '',
+        result: '',
+        result2: '',
+        result3: '',
+        email: '',
+        firstName: '',
+        company: '',
+        phone: ''
         })
     }
 
@@ -95,6 +103,66 @@ export class UserForm extends Component {
             result3: result + (equate3).toFixed()
         })
     }
+
+    hubSpot = () => {
+ 
+         const key = '4d2b081d-ba0b-4671-9284-177c7f957f21'
+         const baseUrl = `https://cors-anywhere.herokuapp.com/https://api.hubapi.com/contacts/v1/contact/?hapikey=${key}`
+         
+         Axios({
+             method: 'post',
+             url: baseUrl,
+             headers: 
+                 { 'Content-Type': 'application/json; charset=utf-8',},
+             data: {
+                 "properties": [
+                     {
+                       "property": "email",
+                       "value": `${this.state.email}`
+                     },
+                     {
+                         "property": "firstname",
+                         "value": `${this.state.firstName}`
+                       },
+                       {
+                         "property": "company",
+                         "value": `${this.state.company}`
+                       },
+                       {
+                         "property": "phone",
+                         "value": `${this.state.phone}`
+                       },
+                     {
+                       "property": "annualrevenue",
+                       "value": `${this.state.annualSales}`
+                     },
+                     {
+                         "property": "additionalprofit",
+                         "value": `${this.state.result3}`
+                       },
+                     {
+                       "property": "market_share_increase",
+                       "value": `${this.state.result2}`
+                     },
+                     {
+                       "property": "lost_to_internet",
+                       "value": `${this.state.result}`
+                     },
+                     {
+                        "property": "industry",
+                        "value": `${this.state.storeType}`
+                      },
+                 ]   
+             }
+         }).then(res => {
+             console.log(res.data)
+             console.log('success')
+         }).catch(err => {
+             console.log('Failed to post contact')
+             console.log(err)
+             // console.log(values)
+         })
+     }
 
     
 
@@ -147,22 +215,13 @@ export class UserForm extends Component {
                     values={values}
                     setResult={this.setResult}/>
                 )
-            // case 6:
-            //     return (
-            //         <LoseInternet 
-            //         nextStep={this.nextStep}
-            //         prevStep={this.prevStep}
-            //         handleChange={this.handleChange}
-            //         values={values}
-            //         setResult={this.setResult}
-            //         />
-            //     )
             case 6:
                 return (
                     <Calculation
                     restart={this.restart}
                     values={values}
                     handleChange={this.handleChange}
+                    hubSpot={this.hubSpot}
                     />
                 )
             }
