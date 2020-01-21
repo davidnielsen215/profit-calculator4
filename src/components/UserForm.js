@@ -107,7 +107,6 @@ export class UserForm extends Component {
 
     hubSpot = () => {
  
-        //  const key = process.env.REACT_APP_API_KEY
          const baseUrl = `https://cors-anywhere.herokuapp.com/https://api.hubapi.com/contacts/v1/contact/?hapikey=${process.env.REACT_APP_API_KEY}`
          
          Axios({
@@ -160,12 +159,12 @@ export class UserForm extends Component {
                  ]   
              }
          }).then(res => {
-             console.log(res.data)
+            //  console.log(res.data)
              console.log('success')
          }).catch(err => {
              console.log('Failed to post contact')
              console.log(err)
-             console.log(process.env.API_KEY)
+            //  console.log(process.env.API_KEY)
          })
      }
 
