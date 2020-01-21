@@ -152,6 +152,10 @@ export class UserForm extends Component {
                         "property": "industry",
                         "value": `${this.state.storeType}`
                       },
+                      {
+                        "property": "hubspot_owner_id",
+                        "value": "41229919",
+                      }
                  ]   
              }
          }).then(res => {
