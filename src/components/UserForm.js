@@ -9,6 +9,7 @@ import Calculation from './Calculation'
 import Axios from 'axios'
 
 
+
 export class UserForm extends Component {
     state = {
         step: 1,
@@ -106,8 +107,8 @@ export class UserForm extends Component {
 
     hubSpot = () => {
  
-         const key = '5e2df9e5-a53e-497c-aa81-350f8637d2f1'
-         const baseUrl = `https://cors-anywhere.herokuapp.com/https://api.hubapi.com/contacts/v1/contact/?hapikey=${key}`
+        //  const key = process.env.REACT_APP_API_KEY
+         const baseUrl = `https://cors-anywhere.herokuapp.com/https://api.hubapi.com/contacts/v1/contact/?hapikey=${process.env.REACT_APP_API_KEY}`
          
          Axios({
              method: 'post',
@@ -154,7 +155,7 @@ export class UserForm extends Component {
                       },
                       {
                         "property": "hubspot_owner_id",
-                        "value": "41229919",
+                        "value": "40887845",
                       }
                  ]   
              }
@@ -164,7 +165,7 @@ export class UserForm extends Component {
          }).catch(err => {
              console.log('Failed to post contact')
              console.log(err)
-             // console.log(values)
+             console.log(process.env.API_KEY)
          })
      }
 
