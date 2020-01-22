@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { MuiThemeProvider, RadioGroup, AppBar, Button, 
-        FormControlLabel, Radio, FormControl, TextField, Typography, Card, CardContent } from '@material-ui/core'
+        FormControlLabel, Radio, FormControl, TextField, Card, CardContent } from '@material-ui/core'
 import NumberFormat from 'react-number-format'
 import EntireLogo from '../images/EntireLogo.png'
+import { Spring } from 'react-spring/renderprops'
 
-
-export class LastYear extends Component {
+export default class LastYear extends Component {
     continue = e => {
         e.preventDefault()
         this.props.nextStep()
@@ -36,7 +36,6 @@ export class LastYear extends Component {
                 },
               });
             }}
-            // decimalSeparator
             isNumericString
             suffix="%"
             />
@@ -48,58 +47,63 @@ export class LastYear extends Component {
             <div className="background">
             <MuiThemeProvider>
                 <React.Fragment>
-                <AppBar position='static' style={{backgroundColor: '#151856' }}>
-                        <Typography variant="h5" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                        Last Year's Product
-                        </Typography>
-                    </AppBar>   
-                    <br></br>
-                    <br></br>
-                    <Card className="card">
-                    <CardContent>
-                    <h4>Step {this.getStep(values.step)} of 4</h4>
+                <AppBar position='static' style={{backgroundColor: 'white' }}>
+                    <div>
+                    <img className='entirelogo' src={EntireLogo} alt=""/>
+                    </div>
+                </AppBar>    
                     <br/>
-                    <h3>What (%) of your sales were last year’s product? </h3>
                     <br/>
-                    <FormControl component="fieldset" >
-                    <RadioGroup onChange={handleChange('lastYear')} defaultValue={values.lastYear}>
-                        <FormControlLabel value="15%" control={<Radio color="primary"/>} label="10% - 20%" />
-                        <FormControlLabel value="25.5%" control={<Radio color="primary"/>} label="21% - 30%" />
-                        <FormControlLabel value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
-                        <FormControlLabel value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />
-                        
-                    </RadioGroup>
-                    </FormControl>
-                    <br/>
-                    <TextField
-                            label="Other (Numbers Only)"
-                            className="other"
-                            onChange={handleChange('lastYear')}
-                            id="formatted-numberformat-input"
-                            InputProps={{
-                                inputComponent: this.NumberFormatCustom1,
-                            }}
-                        />
-                    <br/>
-                    <Button 
-                        style={styles.button2}
-                        onClick={this.back}
-                    >
-                        previous
-                    </Button>
-
-                    <Button 
-                        style={styles.button}
-                        onClick={this.continue}
-                    >
-                        continue
-                    </Button>
-                    </CardContent>
-                    </Card>
+                <Spring 
+                    from={{  marginTop: '1500px'}}
+                    to={{  marginTop: '0px'}}>
+                    { props => (
+                    <div style={props}>
+                        <Card className="card">
+                            <CardContent>
+                                <h4>Step {this.getStep(values.step)} of 4</h4>
+                                <br/>
+                                
+                                <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
+                                    <h3 style={{ color: 'white', padding: '4px'}}>What (%) of your sales were last year’s product?</h3>
+                                </div>
+                                <br/>
+                                <FormControl component="fieldset" >
+                                    <RadioGroup onChange={handleChange('lastYear')} defaultValue={values.lastYear}>
+                                        <FormControlLabel value="15%" control={<Radio color="primary"/>} label="10% - 20%" />
+                                        <FormControlLabel value="25.5%" control={<Radio color="primary"/>} label="21% - 30%" />
+                                        <FormControlLabel value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
+                                        <FormControlLabel value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />                        
+                                    </RadioGroup>
+                                </FormControl>
+                                <br/>
+                                <TextField
+                                    label="Other (Numbers Only)"
+                                    className="other"
+                                    onChange={handleChange('lastYear')}
+                                    id="formatted-numberformat-input"
+                                    InputProps={{
+                                        inputComponent: this.NumberFormatCustom1,
+                                    }}
+                                />
+                                <br/>
+                                <Button 
+                                    style={styles.button2}
+                                    onClick={this.back}
+                                >   previous
+                                </Button>
+                                <Button 
+                                    style={styles.button}
+                                    onClick={this.continue}
+                                >   continue
+                                </Button>
+                            </CardContent>
+                        </Card>
+                    </div>
+                    )}
+                </Spring>
                 </React.Fragment>
             </MuiThemeProvider>
-            <br/>
-            <img className='entirelogo' src={EntireLogo} alt=""/>
             </div>
         )
     }
@@ -126,4 +130,4 @@ const styles = {
     
 }
 
-export default LastYear
+

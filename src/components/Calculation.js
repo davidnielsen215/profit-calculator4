@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { MuiThemeProvider, Button, 
         TextField, Card, CardContent, Paper } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
+import {Spring} from 'react-spring/renderprops'
 
 class Calculation extends Component {
 
@@ -25,87 +26,145 @@ class Calculation extends Component {
             <div className="lastbackground">
                 <MuiThemeProvider>
                 <React.Fragment>
-                <br></br>
-                <br></br>
-                <Card className='card'>
-                    <CardContent>
-            
-                    <img className='lastlogo' src={EntireLogo} alt=""/>
                     <br/>
                     <br/>
-                    <br/>
-                    {/* <br/> */}
-                    <Paper elevation={3}>
-                        <h3>Current Annual Sales</h3>
+                <Spring 
+                from={{ opacity: 0}}
+                to={{ opacity: 1}}
+                config={{duration: 1000}}
+                >
+                { props => (
+                <div style={props}>
+
+                    <Card className='card'>
+                        <CardContent>
+                            <img className='lastlogo' src={EntireLogo} alt=""/>
+                            <br/>
+                            <br/>
+                            <br/>
+
+                        <Spring 
+                        from={{ number: 0}}
+                        to={{ number: `${values.annualSales}`}}
+                        config={{ duration: 1500}}
+                        >
+                        { props => (
+                        <div style={props}> 
+                            <Paper elevation={3}>
+                                <h3>Current Annual Sales</h3>
+                                <br/>
+                                <h2 style={{color: 'green'}}>${this.withCommas(props.number.toFixed())}</h2>
+                                <br/>
+                            </Paper>
+                        </div> )} 
+                        </Spring>
+
                         <br/>
-                        <h2 style={{color: 'green'}}>${this.withCommas(values.annualSales)}</h2>
+
+                        <Spring 
+                        from={{ number: 0}}
+                        to={{ number: `${values.result3}`}}
+                        config={{ duration: 1500}}
+                        >
+                        { props => (
+                        <div style={props}>
+                            <Paper elevation={3}>
+                                <h3>Additional BDR Profit</h3>
+                                <br/>
+                                <h1 style={{color: 'green', fontSize: '40px'}}>${this.withCommas(props.number.toFixed())}</h1>
+                                <br/>
+                            </Paper>
+                        </div>
+                        )}
+                        </Spring>
+
                         <br/>
-                    </Paper>
-                    <br></br>
-                    <Paper elevation={3}>
-                        <h3>Additional BDR Profit</h3>
+
+                        <Spring 
+                        from={{ number: 0}}
+                        to={{ number: `${values.result}`}}
+                        config={{ duration: 1500}}
+                        >
+                        { props => (
+                        <div style={props}>
+                            <Paper elevation={3}>
+                                <h3>Current Amount Lost to Internet</h3>
+                                <p>PND {values.loseInternet} based on industry average</p>
+                                <br/>
+                                <h2 style={{color: '#6f1502'}}>${this.withCommas(props.number.toFixed())}</h2>
+                                <br/>
+                            </Paper>
+                        </div>
+                        )}
+                        </Spring>
+
                         <br/>
-                        <h1 style={{color: 'green', fontSize: '40px'}}>${this.withCommas(values.result3)}</h1>
+
+                        <Spring 
+                        from={{  number: 0}}
+                        to={{  number: `${values.result2}`}}
+                        config={{ duration: 1500}}
+                        >
+                        { props => (
+                        <div style={props}>
+                            <Paper elevation={3}>
+                                <h3>Potential Market Share Maximum</h3>
+                                <br/>
+                                <h2 style={{color: 'blue'}}>${this.withCommas(props.number.toFixed())}</h2>
+                                <br/>
+                            </Paper>
+                        </div>
+                        )}
+                        </Spring>
                         <br/>
-                    </Paper>
-                    <br></br>
-                    <Paper elevation={3}>
-                        <h3>Current Amount Lost to Internet</h3>
-                        <p>PND {values.loseInternet} based on industry average</p>
+                        <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
+                            <h3 style={{ color: 'white', padding: '4px'}}>Enter email to be sent results</h3>
+                        </div>
                         <br/>
-                        <h2 style={{color: '#6f1502'}}>${this.withCommas(values.result)}</h2>
+                        <TextField
+                        label="Email"
+                        onChange={handleChange('email')}
+                        variant="outlined"
+                        className="email"
+                        />
+                        <TextField
+                        label="First Name"
+                        onChange={handleChange('firstName')}
+                        variant="outlined"
+                        className="email"
+                        />
                         <br/>
-                    </Paper>
-                    <br></br>
-                    <Paper elevation={3}>
-                        <h3>Potential Market Share Maximum</h3>
+                        <TextField
+                        label="Company Name"
+                        onChange={handleChange('company')}
+                        variant="outlined"
+                        className="email"
+                        />
+
+                        <TextField
+                        label="Phone Number"
+                        onChange={handleChange('phone')}
+                        variant="outlined"
+                        className="email"
+                        />
+
                         <br/>
-                        <h2 style={{color: 'blue'}}>${this.withCommas(values.result2)}</h2>
+                        <Button onClick={this.enter} style={styles.button}>Submit</Button>
                         <br/>
-                    </Paper>
-                    <br/>
-                    <h4>Enter email to be sent results</h4>
-                    <br></br>
-                    <TextField
-                    label="Email"
-                    onChange={handleChange('email')}
-                    variant="outlined"
-                    className="email"
-                    />
-                    <TextField
-                    label="First Name"
-                    onChange={handleChange('firstName')}
-                    variant="outlined"
-                    className="email"
-                    />
-                    <br/>
-                    <TextField
-                    label="Company Name"
-                    onChange={handleChange('company')}
-                    variant="outlined"
-                    className="email"
-                    />
-                   
-                    <TextField
-                    label="Phone Number"
-                    onChange={handleChange('phone')}
-                    variant="outlined"
-                    className="email"
-                    />
-                    <br></br>
-                    <Button onClick={this.enter} style={styles.button}>Submit</Button>
-                    <br/>
-                    <Button onClick={this.restart} style={styles.button2}>Restart</Button>
-                    <br/>
-                    </CardContent>
-                </Card>
+                        <Button onClick={this.restart} style={styles.button2}>Restart</Button>
+                        <br/>
+                        </CardContent>
+                    </Card>
+                </div>
+                )}
+                </Spring>
                 </React.Fragment>
                 </MuiThemeProvider>
             </div>
         )
     }
-    
 }
+
 const styles = {
     button: {
         color: 'white',

@@ -89,8 +89,6 @@ export class UserForm extends Component {
 
     setResult = () =>{
         const { result, result2, loseInternet, annualSales } = this.state
-        // const var1 = parseFloat(lastYear)
-        // const var2 = parseFloat(netProfit)
         const var3 = (parseFloat(loseInternet) / 100)
         const var4 = (parseFloat(loseInternet) / 100) + 1
 

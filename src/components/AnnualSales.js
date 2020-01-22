@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { MuiThemeProvider, RadioGroup, CardContent, Card, AppBar, Button, 
-        FormControlLabel, FormControl, Radio, TextField, Typography } from '@material-ui/core'
+        FormControlLabel, FormControl, Radio, TextField } from '@material-ui/core'
 import NumberFormat from 'react-number-format'
 import EntireLogo from '../images/EntireLogo.png'
 import '../LandingPage.css'
-
+import { Spring } from 'react-spring/renderprops'
 
 export class AnnualSales extends Component {
     state = {
@@ -63,62 +63,65 @@ export class AnnualSales extends Component {
             <div className="background">
             <MuiThemeProvider>
                 <React.Fragment>
-                <AppBar position='static' style={{backgroundColor: '#151856' }}>
-                        <Typography variant="h5" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                            Annual Sales
-                        </Typography>
-                    </AppBar>                    
-                    <br></br>
-                    <br></br>
-                    <Card className='card'>
-                    <CardContent>
-                    <h4>Step {this.getStep(values.step)} of 4</h4>
-                    <br/>
-                    <h3>Select Range for Store's Annual Sales </h3>
-                    <br/>
-                    <FormControl >
-                    <RadioGroup onChange={handleChange('annualSales')} defaultValue={values.annualSales}>
-                        <FormControlLabel value="625000" disabled={isDisabled} control={<Radio color="primary"/>} label="$500K - $750K" />
-                        <FormControlLabel value="875000" disabled={isDisabled} control={<Radio color="primary"/>} label="$750K - $1M" />
-                        <FormControlLabel value="1250000" disabled={isDisabled} control={<Radio color="primary"/>} label="$1M - $1.5M" />
-                        <FormControlLabel value="1750000" disabled={isDisabled} control={<Radio color="primary"/>} label="$1.5M - $2M" />
-                        <FormControlLabel value="2500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$2M - $3M" />
-                        <FormControlLabel value="4000000" disabled={isDisabled} control={<Radio color="primary"/>} label="$3M - $5M" />
-                        <FormControlLabel value="7500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$5M - $10M" />
-                        
-                    </RadioGroup>
-                    </FormControl>
-                    <br/>
-                    <TextField
-                            label="Other (Numbers Only)"
-                            className='other'
-                            onChange={handleChange('annualSales')}
-                            id="formatted-numberformat-input"
-                            InputProps={{
-                                inputComponent: this.NumberFormatCustom1
-                            }}
-                        />
-                    <br/>
-                    <Button 
-                        style={styles.button2}
-                        onClick={this.back}
-                    >
-                        previous
-                    </Button>
-
-                    <Button 
-                        style={styles.button}
-                        onClick={this.continue}
-                    >
-                        continue
-                    </Button>
-
-                    </CardContent>
-                    </Card>
+                <AppBar position='static' style={{backgroundColor: 'white' }}>
+                    <div>
+                    <img className='entirelogo' src={EntireLogo} alt=""/>
+                    </div>
+                </AppBar>                    
+                <br/>
+                <br/>
+                <Spring 
+                    from={{  marginTop: '1500px'}}
+                    to={{  marginTop: '0px'}}>
+                    { props => (
+                    <div style={props}>
+                        <Card className='card'>
+                            <CardContent>
+                                <h4>Step {this.getStep(values.step)} of 4</h4>
+                                <br/>
+                                <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
+                                    <h3 style={{ color: 'white', padding: '4px'}}>Select Range for store's annual sales</h3>
+                                </div>
+                                <br/>
+                                <FormControl >
+                                    <RadioGroup onChange={handleChange('annualSales')} defaultValue={values.annualSales}>
+                                        <FormControlLabel value="625000" disabled={isDisabled} control={<Radio color="primary"/>} label="$500K - $750K" />
+                                        <FormControlLabel value="875000" disabled={isDisabled} control={<Radio color="primary"/>} label="$750K - $1M" />
+                                        <FormControlLabel value="1250000" disabled={isDisabled} control={<Radio color="primary"/>} label="$1M - $1.5M" />
+                                        <FormControlLabel value="1750000" disabled={isDisabled} control={<Radio color="primary"/>} label="$1.5M - $2M" />
+                                        <FormControlLabel value="2500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$2M - $3M" />
+                                        <FormControlLabel value="4000000" disabled={isDisabled} control={<Radio color="primary"/>} label="$3M - $5M" />
+                                        <FormControlLabel value="7500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$5M - $10M" />
+                                    </RadioGroup>
+                                </FormControl>
+                                <br/>
+                                <TextField
+                                    label="Other (Numbers Only)"
+                                    className='other'
+                                    onChange={handleChange('annualSales')}
+                                    id="formatted-numberformat-input"
+                                    InputProps={{
+                                        inputComponent: this.NumberFormatCustom1
+                                    }}
+                                />
+                                <br/>
+                                <Button 
+                                    style={styles.button2}
+                                    onClick={this.back}
+                                >   previous
+                                </Button>
+                                <Button 
+                                    style={styles.button}
+                                    onClick={this.continue}
+                                >   continue
+                                </Button>
+                            </CardContent>
+                        </Card>
+                    </div>
+                        )}
+                </Spring>
                 </React.Fragment>
             </MuiThemeProvider>
-            <br/>
-            <img className='entirelogo' src={EntireLogo} alt=""/>
 
             </div>
         )

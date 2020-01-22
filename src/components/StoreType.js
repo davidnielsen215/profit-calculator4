@@ -1,27 +1,16 @@
 import React, { Component } from 'react'
-import {    MuiThemeProvider,
-            RadioGroup, 
-            CardContent, 
-            AppBar, 
-            Button, 
-            Radio, 
-            FormControlLabel, 
-            FormControl, 
-            Typography, 
-            Card ,
-        } from '@material-ui/core'
+import {    MuiThemeProvider, RadioGroup, CardContent, 
+            AppBar, Button, Radio, FormControlLabel, FormControl, 
+            Card } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
 import '../LandingPage.css'
+import { Spring } from 'react-spring/renderprops'
 
-
-
-export class StoreType extends Component {
+export default class StoreType extends Component {
     continue = e => {
-        // const {values} = this.props
         e.preventDefault()
         this.props.nextStep()
         this.props.internetLoss()
-        
     }
 
     getStep = (x) => {
@@ -32,44 +21,56 @@ export class StoreType extends Component {
     render() {
         const { values, handleChange } = this.props 
         return (
+            
             <div className="background">
-            <MuiThemeProvider>
-                <React.Fragment>
-                    <AppBar position='static' style={{backgroundColor: '#151856' }}>
-                        <Typography variant="h5" style={{paddingTop: '2%', paddingBottom: '2%', padding: "2%"}}>
-                            Store Type
-                        </Typography>
-                    </AppBar>
-                    
-                    <br></br>
-                    <br></br>
-                <Card className='card'>
-                    <CardContent>
-                    <p>Step {this.getStep(values.step)} of 4</p>
-                    <br/>
-                    <h3>What Type of Retail Store do you have?</h3>
-                    <br/>
-                    <FormControl component="fieldset" >
-                    <RadioGroup onChange={handleChange('storeType')} defaultValue={values.storeType}>
-                        <FormControlLabel value="Ski Shop" control={<Radio color="primary"/>} label="Ski Shop" />
-                        <FormControlLabel value="Snowboard Shop" control={<Radio color="primary"/>} label="Snowboard Shop" />
-                        <FormControlLabel value="Ski + Snowboard Shop" control={<Radio color="primary"/>} label="Ski + Snowboard Shop" />
-                        <FormControlLabel value="Outdoor Gear + Wear" control={<Radio color="primary"/>} label="Outdoor Gear + Wear" />
-                    </RadioGroup>
-                    </FormControl>
-                    {/* <br/> */}
-                    <br/>
-                    <Button 
-                        style={styles.button}
-                        onClick={this.continue}
-                        >continue</Button>
-                    </CardContent>
-                </Card>
+                <MuiThemeProvider>
+                    <React.Fragment>
+                        <AppBar position='static' style={{backgroundColor: 'white' }}>
+                            <div>
+                            <img className='entirelogo' src={EntireLogo} alt=""/>
+                            </div>
+                        </AppBar>
+                        <br/>
+                        <br/>
+                        <Spring 
+                            from={{  marginTop: '1500px'}}
+                            to={{  marginTop: '0px'}}>
+                            { props => (
+                        <div style={props}>
+                            <Card className='card'>
+                                <CardContent>
+                                        <h4>Step {this.getStep(values.step)} of 4</h4>
+                                        <br/>
+                                        <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
+                                        <h3 style={{ color: 'white', padding: '4px'}}>What Type of Retail Store do you have?</h3>
+                                        </div>
+                                        <br/>
+                                    <FormControl component="fieldset" >
+                                        <RadioGroup onChange={handleChange('storeType')} defaultValue={values.storeType}>
+                                            <FormControlLabel value="Ski Shop" control={<Radio color="primary"/>} label="Ski Shop" />
+                                            <FormControlLabel value="Snowboard Shop" control={<Radio color="primary"/>} label="Snowboard Shop" />
+                                            <FormControlLabel value="Ski + Snowboard Shop" control={<Radio color="primary"/>} label="Ski + Snowboard Shop" />
+                                            <FormControlLabel value="Outdoor Gear + Wear" control={<Radio color="primary"/>} label="Outdoor Gear + Wear" />
+                                        </RadioGroup>
+                                    </FormControl>
+                                    <br/>
+                                <Button 
+                                    style={styles.button}
+                                    onClick={this.continue}>continue
+                                </Button>
+                                </CardContent>
+                            </Card>
+                            <br/>
+                            
+                        </div>
+                        )}
+                        </Spring>
+                        
+
+                    </React.Fragment>
+                </MuiThemeProvider>
+                <br/>
                 
-                </React.Fragment>
-            </MuiThemeProvider>
-            <br/>
-            <img className='entirelogo' src={EntireLogo} alt=""/>
             </div>
         )
     }
@@ -89,4 +90,6 @@ const styles = {
     }
 }
 
-export default StoreType
+
+
+
