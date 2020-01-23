@@ -4,12 +4,25 @@ import { MuiThemeProvider, RadioGroup, AppBar, Button,
 import NumberFormat from 'react-number-format'
 import EntireLogo from '../images/EntireLogo.png'
 import { Spring } from 'react-spring/renderprops'
+import { Alert, AlertTitle } from '@material-ui/lab'
+
 
 export default class LastYear extends Component {
+    state = {
+        alertDisplay: 'none',
+        textShow: 'none'
+    }
     continue = e => {
         e.preventDefault()
-        this.props.nextStep()
-        this.props.setResult()
+        const { values } = this.props
+        if(values.lastYear === ''){
+            this.setState({
+                alertDisplay: ''
+            })
+        } else {
+            this.props.nextStep()
+            this.props.setResult()
+        }
     }
 
     back = e =>{
@@ -20,6 +33,13 @@ export default class LastYear extends Component {
     getStep = (x) => {
         const returnedStep = x -1
         return returnedStep
+    }
+
+    setText = e =>{
+        e.preventDefault()
+        this.setState({
+            textShow: ''
+        })
     }
 
     NumberFormatCustom1(props) {
@@ -73,12 +93,14 @@ export default class LastYear extends Component {
                                         <FormControlLabel value="15%" control={<Radio color="primary"/>} label="10% - 20%" />
                                         <FormControlLabel value="25.5%" control={<Radio color="primary"/>} label="21% - 30%" />
                                         <FormControlLabel value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
-                                        <FormControlLabel value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />                        
+                                        <FormControlLabel value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />  
+                                        <FormControlLabel onClick={this.setText} control={<Radio color="primary"/>} label="Other" />                      
                                     </RadioGroup>
                                 </FormControl>
                                 <br/>
+                                <div style={{ display: `${this.state.textShow}`}}>
                                 <TextField
-                                    label="Other (Numbers Only)"
+                                    label="(%) Enter Percentage"
                                     className="other"
                                     onChange={handleChange('lastYear')}
                                     id="formatted-numberformat-input"
@@ -86,6 +108,7 @@ export default class LastYear extends Component {
                                         inputComponent: this.NumberFormatCustom1,
                                     }}
                                 />
+                                </div>
                                 <br/>
                                 <Button 
                                     style={styles.button2}
@@ -95,8 +118,11 @@ export default class LastYear extends Component {
                                 <Button 
                                     style={styles.button}
                                     onClick={this.continue}
-                                >   continue
+                                >   calculate results
                                 </Button>
+                                <div style={{display: `${this.state.alertDisplay}`}}>
+                                <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
+                                </div>
                             </CardContent>
                         </Card>
                     </div>
@@ -114,7 +140,7 @@ const styles = {
         color: 'white',
         minWidth: '30%',
         margin: 25,
-        backgroundColor: '#151856'
+        backgroundColor: 'green'
     },
     button2: {
         color: 'white',

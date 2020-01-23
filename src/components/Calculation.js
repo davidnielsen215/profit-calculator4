@@ -31,7 +31,7 @@ class Calculation extends Component {
                 <Spring 
                 from={{ opacity: 0}}
                 to={{ opacity: 1}}
-                config={{duration: 1000}}
+                config={{duration: 1500}}
                 >
                 { props => (
                 <div style={props}>
@@ -46,7 +46,7 @@ class Calculation extends Component {
                         <Spring 
                         from={{ number: 0}}
                         to={{ number: `${values.annualSales}`}}
-                        config={{ duration: 1500}}
+                        config={{ duration: 2000}}
                         >
                         { props => (
                         <div style={props}> 
@@ -64,7 +64,7 @@ class Calculation extends Component {
                         <Spring 
                         from={{ number: 0}}
                         to={{ number: `${values.result3}`}}
-                        config={{ duration: 1500}}
+                        config={{ duration: 2000}}
                         >
                         { props => (
                         <div style={props}>
@@ -83,7 +83,7 @@ class Calculation extends Component {
                         <Spring 
                         from={{ number: 0}}
                         to={{ number: `${values.result}`}}
-                        config={{ duration: 1500}}
+                        config={{ duration: 2000}}
                         >
                         { props => (
                         <div style={props}>
@@ -103,7 +103,7 @@ class Calculation extends Component {
                         <Spring 
                         from={{  number: 0}}
                         to={{  number: `${values.result2}`}}
-                        config={{ duration: 1500}}
+                        config={{ duration: 2000}}
                         >
                         { props => (
                         <div style={props}>

@@ -58,8 +58,8 @@
 }
 
 .card{
-    margin-top: 2%;
-    max-width: 75%;
+    margin-top: 1%;
+    max-width: 70%;
     min-width: 45%;
     display: inline-block;
     box-shadow: 6px 6px;
@@ -87,7 +87,7 @@
 }
 
 .other{
-    width: 40%;
+    width: 30%;
 }
 
 .email{

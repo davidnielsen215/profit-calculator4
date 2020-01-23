@@ -5,14 +5,26 @@ import NumberFormat from 'react-number-format'
 import EntireLogo from '../images/EntireLogo.png'
 import '../LandingPage.css'
 import { Spring } from 'react-spring/renderprops'
+import { Alert, AlertTitle } from '@material-ui/lab'
+
 
 export class AnnualSales extends Component {
     state = {
-        isDisabled: false
+        isDisabled: false,
+        alertDisplay: 'none',
+        textShow: 'none'
     }
+
     continue = e => {
         e.preventDefault()
-        this.props.nextStep()
+        const { values } = this.props
+        if(values.annualSales === ''){
+            this.setState({
+                alertDisplay: ''
+            })
+        } else {
+            this.props.nextStep()
+        }
     }
 
     back = e =>{
@@ -23,6 +35,13 @@ export class AnnualSales extends Component {
     getStep = (x) => {
         let returnedStep = x - 1
         return returnedStep
+    }
+
+    setText = e =>{
+        e.preventDefault()
+        this.setState({
+            textShow: ''
+        })
     }
 
      NumberFormatCustom1(props) {
@@ -92,11 +111,13 @@ export class AnnualSales extends Component {
                                         <FormControlLabel value="2500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$2M - $3M" />
                                         <FormControlLabel value="4000000" disabled={isDisabled} control={<Radio color="primary"/>} label="$3M - $5M" />
                                         <FormControlLabel value="7500000" disabled={isDisabled} control={<Radio color="primary"/>} label="$5M - $10M" />
+                                        <FormControlLabel  onClick={this.setText} disabled={isDisabled} control={<Radio color="primary"/>} label="Other" />
                                     </RadioGroup>
                                 </FormControl>
                                 <br/>
+                                <div style={{ display: `${this.state.textShow}`}}>
                                 <TextField
-                                    label="Other (Numbers Only)"
+                                    label="$ (Numbers Only)"
                                     className='other'
                                     onChange={handleChange('annualSales')}
                                     id="formatted-numberformat-input"
@@ -104,6 +125,7 @@ export class AnnualSales extends Component {
                                         inputComponent: this.NumberFormatCustom1
                                     }}
                                 />
+                                </div>
                                 <br/>
                                 <Button 
                                     style={styles.button2}
@@ -115,6 +137,9 @@ export class AnnualSales extends Component {
                                     onClick={this.continue}
                                 >   continue
                                 </Button>
+                                <div style={{display: `${this.state.alertDisplay}`}}>
+                                <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
+                                </div>
                             </CardContent>
                         </Card>
                     </div>

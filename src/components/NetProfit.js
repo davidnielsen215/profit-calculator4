@@ -4,11 +4,24 @@ import { MuiThemeProvider, RadioGroup, AppBar, Button, FormControlLabel,
 import NumberFormat from 'react-number-format'
 import EntireLogo from '../images/EntireLogo.png'
 import { Spring } from 'react-spring/renderprops'
+import { Alert, AlertTitle } from '@material-ui/lab'
+
 
 export default class NetProfit extends Component {
+    state = {
+        alertDisplay: 'none',
+        textShow: 'none'
+    }
     continue = e => {
         e.preventDefault()
-        this.props.nextStep()
+        const { values } = this.props
+        if(values.netProfit === ''){
+            this.setState({
+                alertDisplay: ''
+            })
+        } else {
+            this.props.nextStep()
+        }
     }
 
     back = e =>{
@@ -19,6 +32,13 @@ export default class NetProfit extends Component {
     getStep = (x) => {
         const returnedStep = x -1
         return returnedStep
+    }
+
+    setText = e =>{
+        e.preventDefault()
+        this.setState({
+            textShow: ''
+        })
     }
 
     NumberFormatCustom1(props) {
@@ -74,12 +94,14 @@ export default class NetProfit extends Component {
                                         <FormControlLabel value="5.45%" control={<Radio color="primary"/>} label="4.0% - 6.9%" />
                                         <FormControlLabel value="8.45%" control={<Radio color="primary"/>} label="7.0% - 9.9%" />
                                         <FormControlLabel value="11.45%" control={<Radio color="primary"/>} label="10.0% - 12.9%" />
-                                        <FormControlLabel value="14.45%" control={<Radio color="primary"/>} label="13.0% - 15.9%" />    
+                                        <FormControlLabel value="14.45%" control={<Radio color="primary"/>} label="13.0% - 15.9%" /> 
+                                        <FormControlLabel onClick={this.setText} control={<Radio color="primary"/>} label="Other" />
                                     </RadioGroup>
                                 </FormControl>
                                 <br/>
+                                <div style={{ display: `${this.state.textShow}`}}>
                                 <TextField
-                                    label="Other (Numbers Only)"
+                                    label="  (%) Enter Percentage"
                                     className='other'
                                     onChange={handleChange('netProfit')}
                                     id="formatted-numberformat-input"
@@ -87,6 +109,7 @@ export default class NetProfit extends Component {
                                         inputComponent: this.NumberFormatCustom1,
                                     }}
                                 />
+                                </div>
                                 <br/>
                                 <Button 
                                     style={styles.button2}
@@ -98,6 +121,9 @@ export default class NetProfit extends Component {
                                     onClick={this.continue}
                                 >   continue
                                 </Button>
+                                <div style={{display: `${this.state.alertDisplay}`}}>
+                                <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
+                                </div>
                             </CardContent>
                         </Card>
                     </div>

@@ -5,12 +5,25 @@ import {    MuiThemeProvider, RadioGroup, CardContent,
 import EntireLogo from '../images/EntireLogo.png'
 import '../LandingPage.css'
 import { Spring } from 'react-spring/renderprops'
+import { Alert, AlertTitle } from '@material-ui/lab'
+
 
 export default class StoreType extends Component {
+    state = {
+        alertDisplay: 'none'
+    }
+
     continue = e => {
         e.preventDefault()
-        this.props.nextStep()
-        this.props.internetLoss()
+        const { values } = this.props
+        if(values.storeType === ''){
+            this.setState({
+                alertDisplay: ''
+            })
+        } else {
+            this.props.nextStep()
+            this.props.internetLoss()
+        }
     }
 
     getStep = (x) => {
@@ -41,6 +54,7 @@ export default class StoreType extends Component {
                                 <CardContent>
                                         <h4>Step {this.getStep(values.step)} of 4</h4>
                                         <br/>
+                                        
                                         <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
                                         <h3 style={{ color: 'white', padding: '4px'}}>What Type of Retail Store do you have?</h3>
                                         </div>
@@ -58,6 +72,9 @@ export default class StoreType extends Component {
                                     style={styles.button}
                                     onClick={this.continue}>continue
                                 </Button>
+                                <div style={{display: `${this.state.alertDisplay}`}}>
+                                <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
+                                </div>
                                 </CardContent>
                             </Card>
                             <br/>
