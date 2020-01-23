@@ -10,7 +10,8 @@ import { Alert, AlertTitle } from '@material-ui/lab'
 export default class NetProfit extends Component {
     state = {
         alertDisplay: 'none',
-        textShow: 'none'
+        textShow: 'none',
+        percentage: 50
     }
     continue = e => {
         e.preventDefault()
@@ -34,11 +35,18 @@ export default class NetProfit extends Component {
         return returnedStep
     }
 
+    progressStep = () => {
+        if (this.state.percentage !== 100){
+            this.setState({ percentage: 75 })
+        }
+    }
+
     setText = e =>{
         e.preventDefault()
         this.setState({
             textShow: ''
         })
+        this.progressStep()
     }
 
     NumberFormatCustom1(props) {
@@ -82,23 +90,25 @@ export default class NetProfit extends Component {
                         <Card className='card'>
                             <CardContent>
                                 <h4>Step {this.getStep(values.step)} of 4</h4>
-                                <br/>
-                                
+                                    <br/>
+                                <ProgressBar percentage={this.state.percentage} />
+                                    <br/>
+                                    <br/>
                                 <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
                                     <h3 style={{ color: 'white', padding: '4px'}}>What was your net profit (%) from previous year?</h3>
                                 </div>
-                                <br/>
+                                    <br/>
                                 <FormControl component="fieldset" >
                                     <RadioGroup onChange={handleChange('netProfit')} defaultValue={values.netProfit}>
-                                        <FormControlLabel value="1.95%" control={<Radio color="primary"/>} label="0.0% - 3.9%" />
-                                        <FormControlLabel value="5.45%" control={<Radio color="primary"/>} label="4.0% - 6.9%" />
-                                        <FormControlLabel value="8.45%" control={<Radio color="primary"/>} label="7.0% - 9.9%" />
-                                        <FormControlLabel value="11.45%" control={<Radio color="primary"/>} label="10.0% - 12.9%" />
-                                        <FormControlLabel value="14.45%" control={<Radio color="primary"/>} label="13.0% - 15.9%" /> 
+                                        <FormControlLabel onClick={this.progressStep} value="1.95%" control={<Radio color="primary"/>} label="0.0% - 3.9%" />
+                                        <FormControlLabel onClick={this.progressStep} value="5.45%" control={<Radio color="primary"/>} label="4.0% - 6.9%" />
+                                        <FormControlLabel onClick={this.progressStep} value="8.45%" control={<Radio color="primary"/>} label="7.0% - 9.9%" />
+                                        <FormControlLabel onClick={this.progressStep} value="11.45%" control={<Radio color="primary"/>} label="10.0% - 12.9%" />
+                                        <FormControlLabel onClick={this.progressStep} value="14.45%" control={<Radio color="primary"/>} label="13.0% - 15.9%" /> 
                                         <FormControlLabel onClick={this.setText} control={<Radio color="primary"/>} label="Other" />
                                     </RadioGroup>
                                 </FormControl>
-                                <br/>
+                                    <br/>
                                 <div style={{ display: `${this.state.textShow}`}}>
                                 <TextField
                                     label="  (%) Enter Percentage"
@@ -110,7 +120,7 @@ export default class NetProfit extends Component {
                                     }}
                                 />
                                 </div>
-                                <br/>
+                                    <br/>
                                 <Button 
                                     style={styles.button2}
                                     onClick={this.back}
@@ -136,6 +146,18 @@ export default class NetProfit extends Component {
         )
     }
 }
+
+const ProgressBar = (props) => {
+    return (
+        <div className="progress-bar">
+          <Filler percentage={props.percentage} />
+        </div>
+      )
+  }
+  
+  const Filler = (props) => {
+    return <div className="filler" style={{ width: `${props.percentage}%` }} />
+  }
 
 const styles = {
     button: {

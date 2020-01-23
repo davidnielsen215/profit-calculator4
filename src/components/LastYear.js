@@ -10,7 +10,8 @@ import { Alert, AlertTitle } from '@material-ui/lab'
 export default class LastYear extends Component {
     state = {
         alertDisplay: 'none',
-        textShow: 'none'
+        textShow: 'none', 
+        percentage: 75
     }
     continue = e => {
         e.preventDefault()
@@ -35,11 +36,18 @@ export default class LastYear extends Component {
         return returnedStep
     }
 
+    progressStep = () => {
+        if (this.state.percentage !== 100){
+            this.setState({ percentage: 100 })
+        }
+    }
+
     setText = e =>{
         e.preventDefault()
         this.setState({
             textShow: ''
         })
+        this.progressStep()
     }
 
     NumberFormatCustom1(props) {
@@ -82,22 +90,24 @@ export default class LastYear extends Component {
                         <Card className="card">
                             <CardContent>
                                 <h4>Step {this.getStep(values.step)} of 4</h4>
-                                <br/>
-                                
+                                    <br/>
+                                <ProgressBar percentage={this.state.percentage} />
+                                    <br/>
+                                    <br/>
                                 <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
                                     <h3 style={{ color: 'white', padding: '4px'}}>What (%) of your sales were last year’s product?</h3>
                                 </div>
-                                <br/>
+                                    <br/>
                                 <FormControl component="fieldset" >
                                     <RadioGroup onChange={handleChange('lastYear')} defaultValue={values.lastYear}>
-                                        <FormControlLabel value="15%" control={<Radio color="primary"/>} label="10% - 20%" />
-                                        <FormControlLabel value="25.5%" control={<Radio color="primary"/>} label="21% - 30%" />
-                                        <FormControlLabel value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
-                                        <FormControlLabel value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />  
+                                        <FormControlLabel onClick={this.progressStep} value="15%" control={<Radio color="primary"/>} label="10% - 20%" />
+                                        <FormControlLabel onClick={this.progressStep}value="25.5%" control={<Radio color="primary"/>} label="21% - 30%" />
+                                        <FormControlLabel onClick={this.progressStep} value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
+                                        <FormControlLabel onClick={this.progressStep} value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />  
                                         <FormControlLabel onClick={this.setText} control={<Radio color="primary"/>} label="Other" />                      
                                     </RadioGroup>
                                 </FormControl>
-                                <br/>
+                                    <br/>
                                 <div style={{ display: `${this.state.textShow}`}}>
                                 <TextField
                                     label="(%) Enter Percentage"
@@ -109,7 +119,7 @@ export default class LastYear extends Component {
                                     }}
                                 />
                                 </div>
-                                <br/>
+                                    <br/>
                                 <Button 
                                     style={styles.button2}
                                     onClick={this.back}
@@ -134,6 +144,18 @@ export default class LastYear extends Component {
         )
     }
 }
+
+const ProgressBar = (props) => {
+    return (
+        <div className="progress-bar">
+          <Filler percentage={props.percentage} />
+        </div>
+      )
+  }
+  
+  const Filler = (props) => {
+    return <div className="filler" style={{ width: `${props.percentage}%` }} />
+  }
 
 const styles = {
     button: {
