@@ -48,7 +48,9 @@ const styles = {
         color: 'white',
         minWidth: '50%',
         margin: 25,
-        backgroundColor: '#6f1502'
+        backgroundColor: '#6f1502', 
+        fontFamily: 'Roboto',
+        fontSize: '20px'
     },
     
 }

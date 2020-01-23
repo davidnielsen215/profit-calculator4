@@ -3,8 +3,13 @@ import { MuiThemeProvider, Button,
         TextField, Card, CardContent, Paper } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
 import {Spring} from 'react-spring/renderprops'
+import { Alert, AlertTitle } from '@material-ui/lab'
 
 class Calculation extends Component {
+    state = {
+        errorMsg : 'none',
+        successMsg : 'none'
+    }
 
     withCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -16,8 +21,19 @@ class Calculation extends Component {
     }
 
     enter = () => {
-        this.props.hubSpot()
-        alert('Information Submitted')
+        const {values} = this.props
+        if(values.email !== ''){
+            this.props.hubSpot()
+            this.setState({
+                errorMsg: 'none',
+                successMsg: '',
+        })
+        }else {
+            this.setState({
+                errorMsg: ''
+            })
+        }
+
     }
 
     render() {
@@ -120,6 +136,12 @@ class Calculation extends Component {
                         <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
                             <h3 style={{ color: 'white', padding: '4px'}}>Enter email to be sent results</h3>
                         </div>
+                        <div style={{display: `${this.state.errorMsg}`}}>
+                            <Alert severity='error'><AlertTitle>Please enter email address</AlertTitle></Alert>
+                        </div>
+                        <div style={{display: `${this.state.successMsg}`}}>
+                            <Alert severity='success'><AlertTitle>Information Submitted</AlertTitle></Alert>
+                        </div>
                         <br/>
                         <TextField
                         label="Email"
@@ -128,7 +150,7 @@ class Calculation extends Component {
                         className="email"
                         />
                         <TextField
-                        label="First Name"
+                        label="Full Name"
                         onChange={handleChange('firstName')}
                         variant="outlined"
                         className="email"
@@ -148,6 +170,8 @@ class Calculation extends Component {
                         className="email"
                         />
 
+                        
+                        
                         <br/>
                         <Button onClick={this.enter} style={styles.button}>Submit</Button>
                         <br/>

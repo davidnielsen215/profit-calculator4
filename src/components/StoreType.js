@@ -61,7 +61,7 @@ export default class StoreType extends Component {
                                         <br/>
                                     <FormControl component="fieldset" >
                                         <RadioGroup onChange={handleChange('storeType')} defaultValue={values.storeType}>
-                                            <FormControlLabel value="Ski Shop" control={<Radio color="primary"/>} label="Ski Shop" />
+                                            <FormControlLabel  value="Ski Shop" control={<Radio color="primary"/>} label="Ski Shop" />
                                             <FormControlLabel value="Snowboard Shop" control={<Radio color="primary"/>} label="Snowboard Shop" />
                                             <FormControlLabel value="Ski + Snowboard Shop" control={<Radio color="primary"/>} label="Ski + Snowboard Shop" />
                                             <FormControlLabel value="Outdoor Gear + Wear" control={<Radio color="primary"/>} label="Outdoor Gear + Wear" />
@@ -98,7 +98,7 @@ const styles = {
         color: 'white',
         minWidth: '60%',
         margin: 25,
-        backgroundColor: '#151856'
+        backgroundColor: '#151856',
     },
     card: {
         minWidth: '45%', 
