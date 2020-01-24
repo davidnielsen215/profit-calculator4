@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MuiThemeProvider, Button, 
+import { MuiThemeProvider, 
         TextField, Card, CardContent, Paper } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
 import {Spring} from 'react-spring/renderprops'
@@ -171,9 +171,9 @@ class Calculation extends Component {
                         
                         
                         <br/>
-                        <Button onClick={this.enter} style={styles.button}>Submit</Button>
+                        <button onClick={this.enter} className='continueButton'>Submit</button>
                         <br/>
-                        <Button onClick={this.restart} style={styles.button2}>Restart</Button>
+                        <button onClick={this.restart} className='previousButton'>Restart</button>
                         <br/>
                         </CardContent>
                     </Card>
@@ -185,22 +185,7 @@ class Calculation extends Component {
             </div>
         )
     }
-}
+} 
 
-const styles = {
-    button: {
-        color: 'white',
-        minWidth: '30%',
-        margin: 25,
-        backgroundColor: '#151856'
-    },
-    button2: {
-        color: 'white',
-        minWidth: '30%',
-        margin: 25,
-        backgroundColor: '#6f1502'
-    }
-    
-}
 
 export default Calculation

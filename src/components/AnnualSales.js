@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MuiThemeProvider, RadioGroup, CardContent, Card, AppBar, Button, 
+import { MuiThemeProvider, RadioGroup, CardContent, Card, AppBar,
         FormControlLabel, FormControl, Radio, TextField } from '@material-ui/core'
 import NumberFormat from 'react-number-format'
 import EntireLogo from '../images/EntireLogo.png'
@@ -139,16 +139,16 @@ export class AnnualSales extends Component {
                                 />
                                 </div>
                                     <br/>
-                                <Button 
-                                    style={styles.button2}
+                                <button 
+                                    className='previousButton'
                                     onClick={this.back}
                                 >   previous
-                                </Button>
-                                <Button 
-                                    style={styles.button}
+                                </button>
+                                <button 
+                                    className='continueButton'
                                     onClick={this.continue}
                                 >   continue
-                                </Button>
+                                </button>
                                 <div style={{display: `${this.state.alertDisplay}`}}>
                                 <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
                                 </div>
@@ -177,25 +177,5 @@ const ProgressBar = (props) => {
     return <div className="filler" style={{ width: `${props.percentage}%` }} />
   }
 
-const styles = {
-    button: {
-        color: 'white',
-        minWidth: '30%',
-        margin: 25,
-        backgroundColor: '#151856'
-    },
-    button2: {
-        color: 'white',
-        minWidth: '30%',
-        margin: 25,
-        backgroundColor: '#6f1502'
-    },
-    card: {
-        minWidth: '45%', 
-        display: 'inline-block', 
-        boxShadow: '6px 6px'
-    }
-    
-}
 
 export default AnnualSales

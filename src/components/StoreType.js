@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {    MuiThemeProvider, RadioGroup, CardContent, 
-            AppBar, Button, Radio, FormControlLabel, FormControl, 
+            AppBar, Radio, FormControlLabel, FormControl, 
             Card } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
 import '../LandingPage.css'
@@ -77,10 +77,10 @@ export default class StoreType extends Component {
                                         </RadioGroup>
                                     </FormControl>
                                     <br/>
-                                <Button 
-                                    style={styles.button}
+                                <button 
+                                    className='continueButton'
                                     onClick={this.continue}>continue
-                                </Button>
+                                </button>
                                 <div style={{display: `${this.state.alertDisplay}`}}>
                                 <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
                                 </div>
@@ -114,19 +114,6 @@ const ProgressBar = (props) => {
     return <div className="filler" style={{ width: `${props.percentage}%` }} />
   }
 
-const styles = {
-    button: {
-        color: 'white',
-        minWidth: '60%',
-        margin: 25,
-        backgroundColor: '#151856',
-    },
-    card: {
-        minWidth: '45%', 
-        display: 'inline-block', 
-        boxShadow: '6px 6px'
-    }
-}
 
 
 

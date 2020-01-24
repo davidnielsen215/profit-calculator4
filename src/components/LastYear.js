@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MuiThemeProvider, RadioGroup, AppBar, Button, 
+import { MuiThemeProvider, RadioGroup, AppBar,
         FormControlLabel, Radio, FormControl, TextField, Card, CardContent } from '@material-ui/core'
 import NumberFormat from 'react-number-format'
 import EntireLogo from '../images/EntireLogo.png'
@@ -120,16 +120,16 @@ export default class LastYear extends Component {
                                 />
                                 </div>
                                     <br/>
-                                <Button 
-                                    style={styles.button2}
+                                <button 
+                                    className='previousButton'
                                     onClick={this.back}
                                 >   previous
-                                </Button>
-                                <Button 
-                                    style={styles.button}
+                                </button>
+                                <button 
+                                    className='continueButton'
                                     onClick={this.continue}
                                 >   calculate results
-                                </Button>
+                                </button>
                                 <div style={{display: `${this.state.alertDisplay}`}}>
                                 <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
                                 </div>
@@ -157,25 +157,5 @@ const ProgressBar = (props) => {
     return <div className="filler" style={{ width: `${props.percentage}%` }} />
   }
 
-const styles = {
-    button: {
-        color: 'white',
-        minWidth: '30%',
-        margin: 25,
-        backgroundColor: 'green'
-    },
-    button2: {
-        color: 'white',
-        minWidth: '30%',
-        margin: 25,
-        backgroundColor: '#6f1502'
-    },
-    card: {
-        minWidth: '45%', 
-        display: 'inline-block', 
-        boxShadow: '6px 6px'
-    }
-    
-}
 
 

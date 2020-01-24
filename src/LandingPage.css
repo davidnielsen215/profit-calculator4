@@ -6,13 +6,51 @@
 .maincont{
     display: flex; 
 }
+
+.button{
+    color: white;
+    border: 1px solid white;
+    min-width: 50%;
+    min-height: 5%;
+    margin: 25;
+    background-color: #6f1502;
+    font-family: 'Roboto';
+    font-size: 25px;
+    border-radius: 10px;
+    margin-top: 3vh;
+}
+
+.continueButton{
+    color: white;
+    min-width: 15vw;
+    min-height: 5%;
+    background-color: #151856;
+    font-family: 'Roboto';
+    font-size: 25px;
+    border-radius: 10px;
+    margin: 3vh;
+    padding: 3px;
+}
+
+.previousButton{
+    color: white;
+    min-width: 15vw;
+    min-height: 5%;
+    background-color: #6f1502;
+    font-family: 'Roboto';
+    font-size: 25px;
+    border-radius: 10px;
+    margin: 3vh;
+    padding: 3px;
+}
+
 .background{
     min-height: 100vh;
     max-height: 115vh;
     background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
 }
 .lastbackground{
-    max-height: 120vh;
+    min-height: 100vh;
     background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
 }
 .container{
@@ -33,7 +71,7 @@
 .title{
     font-size: 55px;
     padding: 20px;
-    padding-top: 20%;
+    padding-top: 17%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -86,7 +124,12 @@
     justify-content: 'space-evenly';
     align-items: 'center'
 }
-
+.landinglogo{
+    width: 55%;
+    display: 'inline-block';
+    justify-content: 'space-evenly';
+    align-items: 'center'
+}
 .lastlogo{
     width: 50%
 }
@@ -144,7 +187,42 @@
     padding-top: 20%;
     font-family: 'Roboto', sans-serif;
     }
+    .landinglogo{
+        padding-top: 1vh;
+        width: 75%;
+        display: 'inline-block';
+        justify-content: 'space-evenly';
+        align-items: 'center'
+    }
 
+    .button{
+        font-size: 50px;
+        padding: 5px;
+        border: 4px solid white;
+    }
+    .continueButton{
+        color: white;
+        min-width: 30vw;
+        min-height: 5%;
+        background-color: #151856;
+        font-family: 'Roboto';
+        font-size: 30px;
+        border-radius: 10px;
+        margin: 3vh;
+        padding: 5px;
+    }
+    
+    .previousButton{
+        color: white;
+        min-width: 30vw;
+        min-height: 5%;
+        background-color: #6f1502;
+        font-family: 'Roboto';
+        font-size: 30px;
+        border-radius: 10px;
+        margin: 3vh;
+        padding: 5px;
+    }
     .background{
         height: 100vh;
         background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
@@ -253,6 +331,38 @@ and (max-device-width : 500px){
         padding: 40px;
         font-family: 'Roboto', sans-serif;
     }
+
+    .button{
+        margin-top: 7vh;
+        font-size: 50px;
+        padding: 5px;
+        border: 4px solid white;
+    }
+
+    .continueButton{
+        color: white;
+        min-width: 55vw;
+        min-height: 10%;
+        background-color: #151856;
+        font-family: 'Roboto';
+        font-size: 35px;
+        border-radius: 10px;
+        margin: 2vh;
+        padding: 5px;
+    }
+    
+    .previousButton{
+        color: white;
+        min-width: 55vw;
+        min-height: 10%;
+        background-color: #6f1502;
+        font-family: 'Roboto';
+        font-size: 35px;
+        border-radius: 10px;
+        margin: 2vh;
+        padding: 5px;
+    }
+    
     .card{
         padding-top: none;
         margin-top: 5vh;
