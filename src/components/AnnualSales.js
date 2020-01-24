@@ -109,7 +109,7 @@ export class AnnualSales extends Component {
                                 <ProgressBar percentage={this.state.percentage} />
                                     <br/>
                                     <br/>
-                                <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
+                                <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
                                     <h3 style={{ color: 'white', padding: '4px'}}>Select Range for store's annual sales</h3>
                                 </div>
                                     <br/>

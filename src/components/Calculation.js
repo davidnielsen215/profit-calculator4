@@ -133,7 +133,7 @@ class Calculation extends Component {
                         )}
                         </Spring>
                         <br/>
-                        <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '4vh'}}>
+                        <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
                             <h3 style={{ color: 'white', padding: '4px'}}>Enter email to be sent results</h3>
                         </div>
                         <div style={{display: `${this.state.errorMsg}`}}>

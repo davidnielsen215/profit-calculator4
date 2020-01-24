@@ -4,8 +4,7 @@
 }
 
 .maincont{
-    display: flex;
-    
+    display: flex; 
 }
 .background{
     height: 109vh;
@@ -109,8 +108,6 @@
   
   .filler {
     background: green;
-    /* align-items: center; */
-    /* background-repeat: no-repeat; */
     background-size: cover;
     position: center;
     height: 100%;
@@ -119,18 +116,24 @@
   }
 
 /* Ipad  */
-@media (max-width: 1100px){
+@media only screen and (max-width: 800px){
 
     .maincont{
         display: inline-block;
     }
     .title{
         font-size: 65px;
-        padding: 20px;
-        padding-top: 10%;
+    padding: 20px;
+    padding-top: 20%;
+    font-family: 'Roboto', sans-serif;
+    }
+
+    .background{
+        height: 100vh;
+        background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
     }
     .question{
-        font-size: 55px;
+        font-size: 65px;
         padding: 20px;
         padding-top: 15px;
     }
@@ -140,7 +143,7 @@
     }
 
     .statement2{
-        font-size: 30px;
+        font-size: 50px;
         padding: 20px;
     }
 
@@ -157,8 +160,9 @@
         height: 145vh;
     }
     .card{
+        margin-top: 30;
         min-width: 75%;
-        min-height: 30%;
+        min-height: 80%;
         display: inline-block;
         box-shadow: 6px 6px;
     }
@@ -171,13 +175,13 @@
         margin-top: 0px; 
         color: white;
         /* background: radial-gradient(circle, rgba(31,192,255,1) 0%, rgba(0,80,255,1) 100%); */
-        height: 15vh;
+        height: 10vh;
         width: 100vw;
     }
 
     .entirelogo{
         display: inline-block;
-        width: 40%;
+        width: 80%;
         background-color: none;
         /* height: 15%; */
     }
@@ -189,20 +193,44 @@
     }
 }
 
-@media (max-width: 500px){
+@media only screen 
+and (max-device-width : 500px){
 
+    .background{
+        height: 100vh;
+    }
     .maincont{
         display: grid;
     }
     .title{
-        font-size: 30px;
+        font-size: 4vh;
+        padding: 2vh;
+        padding-top: 25%;
+        font-family: 'Roboto', sans-serif;
+    }
+    .question{
+        font-size: 3vh;
+        padding: 3vh;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .statement{
+        font-size: 3vh;
         padding: 20px;
-        padding-top: 10%;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .statement2{
+        font-size: 3vh;
+        padding: 40px;
+        font-family: 'Roboto', sans-serif;
     }
     .card{
-        min-width: 95%;
+        margin-top: 7vh;
+        min-height: 25vh;
+        max-width: 80vw;
+        min-width: 75vw;
         display: inline-block;
-        box-shadow: 6px 6px;
     }
 
     .logo{
@@ -210,10 +238,15 @@
     }
 
     .entirelogo{
-        display: inline-block;
-        width: 75%;
-        background-color: none;
-        /* height: 15%; */
+        width: 65%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        padding: 4px;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        display: 'inline-block';
+        justify-content: 'space-evenly';
+        align-items: 'center'
     }
 
     .lastlogo{
@@ -221,14 +254,14 @@
     }
 
     .lastbackground{
-        height: 100%;
+        height: 100vh;
     }
 
     .container{
         margin-top: 0px; 
         color: white;
         background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
-        height: 93vh;
+        height: 92vh;
         width: 101vw;
         margin: none;
     }
@@ -236,7 +269,6 @@
     .container1{
         margin-top: 0px; 
         color: white;
-        /* background: radial-gradient(circle, rgba(31,192,255,1) 0%, rgba(0,80,255,1) 100%); */
         height: 10vh;
         width: 100vw;
     }
