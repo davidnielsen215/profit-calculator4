@@ -104,15 +104,16 @@ export class AnnualSales extends Component {
                     <div style={props}>
                         <Card className='card'>
                             <CardContent>
-                                <h4>Step {this.getStep(values.step)} of 4</h4>
-                                    <br/>
-                                <ProgressBar percentage={this.state.percentage} />
+                            <h4 className='step'>Step {this.getStep(values.step)} of 4</h4>
+                                    
+                            <ProgressBar percentage={this.state.percentage} />
                                     <br/>
                                     <br/>
                                 <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
                                     <h3 style={{ color: 'white', padding: '4px'}}>Select Range for store's annual sales</h3>
                                 </div>
                                     <br/>
+                                
                                 <FormControl >
                                     <RadioGroup onChange={handleChange('annualSales')} defaultValue={values.annualSales}>
                                         <FormControlLabel value="625000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$500K - $750K" />

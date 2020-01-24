@@ -89,8 +89,8 @@ export default class NetProfit extends Component {
                     <div style={props}>
                         <Card className='card'>
                             <CardContent>
-                                <h4>Step {this.getStep(values.step)} of 4</h4>
-                                    <br/>
+                                <h4 className='step'>Step {this.getStep(values.step)} of 4</h4>
+                                    
                                 <ProgressBar percentage={this.state.percentage} />
                                     <br/>
                                     <br/>

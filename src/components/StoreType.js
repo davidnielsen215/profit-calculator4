@@ -59,17 +59,17 @@ export default class StoreType extends Component {
                         <div style={props}>
                             <Card className='card'>
                                 <CardContent>
-                                        <h4>Step {this.getStep(values.step)} of 4</h4>
+                                <h4 className='step'>Step {this.getStep(values.step)} of 4</h4>
+                                    
+                                <ProgressBar percentage={this.state.percentage} />
                                         <br/>
-                                        <ProgressBar percentage={this.state.percentage} />
                                         <br/>
-                                        <br/>
-                                        <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
+                                    <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
                                         <h3 style={{ color: 'white', padding: '4px'}}>What Type of Retail Store do you have?</h3>
                                         </div>
                                         <br/>
                                     <FormControl component="fieldset" >
-                                        <RadioGroup onChange={handleChange('storeType')} defaultValue={values.storeType}>
+                                        <RadioGroup style={{fontSize: '50px'}} onChange={handleChange('storeType')} defaultValue={values.storeType}>
                                             <FormControlLabel onClick={this.progressStep}   value="Ski Shop" control={<Radio color="primary"/>} label="Ski Shop" />
                                             <FormControlLabel onClick={this.progressStep}   value="Snowboard Shop" control={<Radio color="primary"/>} label="Snowboard Shop" />
                                             <FormControlLabel onClick={this.progressStep}   value="Ski + Snowboard Shop" control={<Radio color="primary"/>} label="Ski + Snowboard Shop" />

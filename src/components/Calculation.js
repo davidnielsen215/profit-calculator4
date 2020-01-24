@@ -66,11 +66,12 @@ class Calculation extends Component {
                         >
                         { props => (
                         <div style={props}> 
-                            <Paper elevation={3}>
+                            <Paper elevation={3} className='paper'>
+                                <br/>
                                 <h3>Current Annual Sales</h3>
-                                <br/>
+                                
                                 <h2 style={{color: 'green'}}>${this.withCommas(props.number.toFixed())}</h2>
-                                <br/>
+                                
                             </Paper>
                         </div> )} 
                         </Spring>
@@ -84,11 +85,10 @@ class Calculation extends Component {
                         >
                         { props => (
                         <div style={props}>
-                            <Paper elevation={3}>
+                            <Paper elevation={3} >
+                                <br/>
                                 <h3>Additional BDR Profit</h3>
-                                <br/>
-                                <h1 style={{color: 'green', fontSize: '40px'}}>${this.withCommas(props.number.toFixed())}</h1>
-                                <br/>
+                                <h1 className="additionalProfit">${this.withCommas(props.number.toFixed())}</h1>                             
                             </Paper>
                         </div>
                         )}
@@ -103,12 +103,11 @@ class Calculation extends Component {
                         >
                         { props => (
                         <div style={props}>
-                            <Paper elevation={3}>
+                            <Paper elevation={3} >
+                            <br/>
                                 <h3>Current Amount Lost to Internet</h3>
                                 <p>PND {values.loseInternet} based on industry average</p>
-                                <br/>
                                 <h2 style={{color: '#6f1502'}}>${this.withCommas(props.number.toFixed())}</h2>
-                                <br/>
                             </Paper>
                         </div>
                         )}
@@ -124,10 +123,9 @@ class Calculation extends Component {
                         { props => (
                         <div style={props}>
                             <Paper elevation={3}>
+                            <br/>
                                 <h3>Potential Market Share Maximum</h3>
-                                <br/>
                                 <h2 style={{color: 'blue'}}>${this.withCommas(props.number.toFixed())}</h2>
-                                <br/>
                             </Paper>
                         </div>
                         )}
@@ -150,7 +148,7 @@ class Calculation extends Component {
                         className="email"
                         />
                         <TextField
-                        label="Full Name"
+                        label="Name"
                         onChange={handleChange('firstName')}
                         variant="outlined"
                         className="email"

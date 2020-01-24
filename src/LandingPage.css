@@ -7,11 +7,12 @@
     display: flex; 
 }
 .background{
-    height: 109vh;
+    min-height: 100vh;
+    max-height: 115vh;
     background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
 }
 .lastbackground{
-    height: 130vh;
+    max-height: 120vh;
     background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
 }
 .container{
@@ -61,18 +62,24 @@
 }
 
 .card{
-    margin-top: 1%;
-    max-width: 70%;
+    margin-bottom: 3vh;
+    max-width: 60%;
     min-width: 45%;
+    max-height: 90%;
     display: inline-block;
     box-shadow: 6px 6px;
+}
+
+
+.step{
+    font-size: 15px;
 }
 
 .entirelogo{
     width: 35%;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    padding: 4px;
+    /* padding: 4px; */
     margin-top: 1%;
     margin-bottom: 1%;
     display: 'inline-block';
@@ -100,14 +107,14 @@
     justify-content: center;
     display: inline-block;
     height: 10px;
-    width: 350px;
+    width: 400px;
     border-radius: 50px;
-    border: 1px solid rgb(83, 83, 83);
-    background: rgb(231, 231, 231);
+    border: 2px solid rgb(37, 37, 37);
+    background: rgb(255, 255, 255);
   }
   
   .filler {
-    background: green;
+    background: url('https://66.media.tumblr.com/f08dc891c2781017003b5b93278c546f/tumblr_pkuue0TSKb1uzwgsuo1_400.gif');
     background-size: cover;
     position: center;
     height: 100%;
@@ -115,8 +122,18 @@
     transition: width .3s ease-in;
   }
 
+  .additionalProfit{
+    color: green;
+    font-size: 45px
+  }
+
+  .paper{
+      height: 10vh;
+      max-height: 15vh;
+  }
+
 /* Ipad  */
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1200px){
 
     .maincont{
         display: inline-block;
@@ -151,18 +168,24 @@
         margin-top: 0px; 
         color: white;
         background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
-        height: 90vh;
+        height: 88vh;
         margin: none;
         width: 100vw;
     }
 
     .lastbackground{
-        height: 145vh;
+        height: 100vh;
     }
+
     .card{
+        /* padding-top: 2vh; */
+        margin-top: 3vh;
+        width: 85vw;
+        max-width: 85vw;
+        max-height: 70%;
         margin-top: 30;
-        min-width: 75%;
-        min-height: 80%;
+        min-width: 80vw;
+        min-height: 65%;
         display: inline-block;
         box-shadow: 6px 6px;
     }
@@ -175,13 +198,13 @@
         margin-top: 0px; 
         color: white;
         /* background: radial-gradient(circle, rgba(31,192,255,1) 0%, rgba(0,80,255,1) 100%); */
-        height: 10vh;
+        height: 12vh;
         width: 100vw;
     }
 
     .entirelogo{
         display: inline-block;
-        width: 80%;
+        width: 60%;
         background-color: none;
         /* height: 15%; */
     }
@@ -190,6 +213,11 @@
     }
     .email{
         width: 35%
+    }
+
+    .additionalProfit{
+        color: green;
+        font-size: 65px
     }
 }
 
@@ -226,11 +254,14 @@ and (max-device-width : 500px){
         font-family: 'Roboto', sans-serif;
     }
     .card{
-        margin-top: 7vh;
-        min-height: 25vh;
-        max-width: 80vw;
+        padding-top: none;
+        margin-top: 5vh;
+        min-height: 30vh;
+        max-width: 85vw;
         min-width: 75vw;
         display: inline-block;
+        width: 85vw;
+        font-size: 35px;
     }
 
     .logo{
@@ -238,7 +269,7 @@ and (max-device-width : 500px){
     }
 
     .entirelogo{
-        width: 65%;
+        width: 75%;
         background-color: rgb(255, 255, 255);
         border-radius: 5px;
         padding: 4px;
@@ -262,14 +293,14 @@ and (max-device-width : 500px){
         color: white;
         background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
         height: 92vh;
-        width: 101vw;
+        width: 100vw;
         margin: none;
     }
 
     .container1{
         margin-top: 0px; 
         color: white;
-        height: 10vh;
+        height: 8vh;
         width: 100vw;
     }
     .other{
