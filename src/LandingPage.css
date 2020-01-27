@@ -10,8 +10,8 @@
 .button{
     color: white;
     border: 1px solid white;
-    min-width: 50%;
-    min-height: 5%;
+    min-width: 30%;
+    min-height: 4%;
     margin: 25;
     background-color: #6f1502;
     font-family: 'Roboto';
