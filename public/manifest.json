@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Profit Calc",
+  "name": "Profit Calculator for Best Deal Retailer",
   "icons": [
     {
       "src": "favicon.ico",
