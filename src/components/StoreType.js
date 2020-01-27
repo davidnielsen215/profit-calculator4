@@ -64,7 +64,7 @@ export default class StoreType extends Component {
                                 <ProgressBar percentage={this.state.percentage} />
                                         <br/>
                                         <br/>
-                                    <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
+                                    <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '10px', height: '10%'}}>
                                         <h3 style={{ color: 'white', padding: '8px', fontSize: '150%'}}>What type of retail store do you have?</h3>
                                         </div>
                                         <br/>

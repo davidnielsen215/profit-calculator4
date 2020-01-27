@@ -162,7 +162,7 @@ const ProgressBar = (props) => {
 
   const styles= {
     form: {
-        fontSize: '2vh',
+        fontSize: '2.3vh',
         padding: '10px'
     }
 }

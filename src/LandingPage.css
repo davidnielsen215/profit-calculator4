@@ -31,7 +31,7 @@
     border-radius: 10px;
     margin: 3vh;
     padding: 3px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .previousButton{
@@ -144,7 +144,9 @@
 }
 
 .email{
+    height: 15%;
     width: 30%;
+    min-height: 15%;
     margin-top: 5px;
 }
 
@@ -210,7 +212,7 @@
         font-family: 'Roboto';
         border-radius: 10px;
         margin-top: 3vh;
-        font-size: 50px;
+        font-size: 40px;
         padding: 5px;
         border: 4px solid white;
     }
@@ -220,10 +222,10 @@
         min-height: 5%;
         background-color: #151856;
         font-family: 'Roboto';
-        font-size: 30px;
+        font-size: 35px;
         border-radius: 10px;
         margin: 3vh;
-        padding: 5px;
+        padding: 10px;
     }
     
     .previousButton{
@@ -232,13 +234,14 @@
         min-height: 5%;
         background-color: #6f1502;
         font-family: 'Roboto';
-        font-size: 30px;
+        font-size: 35px;
         border-radius: 10px;
         margin: 3vh;
-        padding: 5px;
+        padding: 10px;
     }
     .background{
-        height: 100vh;
+        min-height: 100vh;
+        max-height: 116vh;
         background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
     }
     .question{
@@ -266,7 +269,8 @@
     }
 
     .lastbackground{
-        height: 100vh;
+        min-height: 110vh;
+        max-height: 115vh;
     }
 
     .card{
@@ -444,32 +448,33 @@ and (max-device-width : 500px){
         margin-top: 7vh;
         font-size: 55px;
         min-width: 55vw;
-        padding: 5px;
+        padding: 20px;
         border: 4px solid white;
+        border-radius: 45px;
     }
 
     .continueButton{
         color: white;
         min-width: 55vw;
-        min-height: 10%;
+        min-height: 15%;
         background-color: #151856;
         font-family: 'Roboto';
         font-size: 50px;
-        border-radius: 10px;
+        border-radius: 45px;
         margin: 2vh;
-        padding: 5px;
+        padding: 20px;
     }
     
     .previousButton{
         color: white;
         min-width: 55vw;
-        min-height: 10%;
+        min-height: 15%;
         background-color: #6f1502;
         font-family: 'Roboto';
         font-size: 50px;
-        border-radius: 10px;
+        border-radius: 45px;
         margin: 2vh;
-        padding: 5px;
+        padding: 20px;
     }
     
     .card{
@@ -547,6 +552,6 @@ and (max-device-width : 500px){
         border-radius: 50px;
         border: 2px solid rgb(37, 37, 37);
         background: rgb(255, 255, 255);
-      }
+    }
 
 }

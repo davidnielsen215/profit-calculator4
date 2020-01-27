@@ -66,7 +66,7 @@ class Calculation extends Component {
                         >
                         { props => (
                         <div style={props}> 
-                            <Paper elevation={3} className='paper'>
+                            <Paper elevation={3}>
                                 <br/>
                                 <h3>Current Annual Sales</h3>
                                 <h2 style={{color: 'green'}}>${this.withCommas(props.number.toFixed())}</h2>
