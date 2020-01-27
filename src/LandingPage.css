@@ -398,12 +398,12 @@ and (orientation : landscape) {
     justify-content: 'space-evenly';
     align-items: 'center'
 }
-}
-
 .step{
     font-size: 20px;
     padding-bottom: 15px;
 }
+}
+
 
 @media only screen 
 and (max-device-width : 500px){
