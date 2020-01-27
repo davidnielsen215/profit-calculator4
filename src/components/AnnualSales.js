@@ -98,8 +98,9 @@ export class AnnualSales extends Component {
                 <br/>
                 <br/>
                 <Spring 
-                    from={{  marginTop: '1500px'}}
-                    to={{  marginTop: '0px'}}>
+                    from={{  opacity: 0}}
+                    to={{  opacity: 1}}
+                    >
                     { props => (
                     <div style={props}>
                         <Card className='card'>
@@ -110,20 +111,20 @@ export class AnnualSales extends Component {
                                     <br/>
                                     <br/>
                                 <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
-                                    <h3 style={{ color: 'white', padding: '4px'}}>Select Range for store's annual sales</h3>
+                                    <h3 style={{ color: 'white', padding: '8px'}}>Select range for store's annual sales</h3>
                                 </div>
                                     <br/>
                                 
                                 <FormControl >
                                     <RadioGroup onChange={handleChange('annualSales')} defaultValue={values.annualSales}>
-                                        <FormControlLabel value="625000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$500K - $750K" />
-                                        <FormControlLabel value="875000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$750K - $1M" />
-                                        <FormControlLabel value="1250000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$1M - $1.5M" />
-                                        <FormControlLabel value="1750000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$1.5M - $2M" />
-                                        <FormControlLabel value="2500000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$2M - $3M" />
-                                        <FormControlLabel value="4000000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$3M - $5M" />
-                                        <FormControlLabel value="7500000" onClick={this.progressStep}  control={<Radio color="primary"/>} label="$5M - $10M" />
-                                        <FormControlLabel  onClick={this.setText} disabled={isDisabled} control={<Radio color="primary"/>} label="Other" />
+                                        <FormControlLabel value="625000" onClick={this.progressStep}  control={<Radio color="primary"/>} label={<p style={styles.form}>$500K - $750K</p>}/>
+                                        <FormControlLabel value="875000" onClick={this.progressStep}  control={<Radio color="primary"/>} label={<p style={styles.form}>$750K - $1M</p>}/>
+                                        <FormControlLabel value="1250000" onClick={this.progressStep}  control={<Radio color="primary"/>} label={<p style={styles.form}>$1M - $1.5M</p>}/>
+                                        <FormControlLabel value="1750000" onClick={this.progressStep}  control={<Radio color="primary"/>} label={<p style={styles.form}>$1.5M - $2M</p>}/>
+                                        <FormControlLabel value="2500000" onClick={this.progressStep}  control={<Radio color="primary"/>} label={<p style={styles.form}>$2M - $3M</p>}/>
+                                        <FormControlLabel value="4000000" onClick={this.progressStep}  control={<Radio color="primary"/>} label={<p style={styles.form}>$3M - $5M</p>}/>
+                                        <FormControlLabel value="7500000" onClick={this.progressStep}  control={<Radio color="primary"/>} label={<p style={styles.form}>$5M - $10M</p>}/>
+                                        <FormControlLabel  onClick={this.setText} disabled={isDisabled} control={<Radio color="primary"/>} label={<p style={styles.form}>Other</p>}/>
                                     </RadioGroup>
                                 </FormControl>
                                     <br/>
@@ -176,6 +177,12 @@ const ProgressBar = (props) => {
   const Filler = (props) => {
     return <div className="filler" style={{ width: `${props.percentage}%` }} />
   }
+
+  const styles= {
+    form: {
+        fontSize: '2vh'
+    }
+}
 
 
 export default AnnualSales

@@ -83,8 +83,9 @@ export default class LastYear extends Component {
                     <br/>
                     <br/>
                 <Spring 
-                    from={{  marginTop: '1500px'}}
-                    to={{  marginTop: '0px'}}>
+                    from={{  opacity: 0}}
+                    to={{  opacity: 1}}>
+                    
                     { props => (
                     <div style={props}>
                         <Card className="card">
@@ -95,16 +96,16 @@ export default class LastYear extends Component {
                                     <br/>
                                     <br/>
                                 <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
-                                    <h3 style={{ color: 'white', padding: '4px'}}>What (%) of your sales were last year’s product?</h3>
+                                    <h3 style={{ color: 'white', padding: '8px'}}>What (%) of your sales were last year’s product?</h3>
                                 </div>
                                     <br/>
                                 <FormControl component="fieldset" >
                                     <RadioGroup onChange={handleChange('lastYear')} defaultValue={values.lastYear}>
-                                        <FormControlLabel onClick={this.progressStep} value="15%" control={<Radio color="primary"/>} label="10% - 20%" />
-                                        <FormControlLabel onClick={this.progressStep}value="25.5%" control={<Radio color="primary"/>} label="21% - 30%" />
-                                        <FormControlLabel onClick={this.progressStep} value="35.5%" control={<Radio color="primary"/>} label="31% - 40%" />
-                                        <FormControlLabel onClick={this.progressStep} value="45.5%" control={<Radio color="primary"/>} label="41% - 50%" />  
-                                        <FormControlLabel onClick={this.setText} control={<Radio color="primary"/>} label="Other" />                      
+                                        <FormControlLabel onClick={this.progressStep} value="15%" control={<Radio color="primary"/>} label={<p style={styles.form}>10% - 20%</p>}/>
+                                        <FormControlLabel onClick={this.progressStep}value="25.5%" control={<Radio color="primary"/>} label={<p style={styles.form}>21% - 30%</p>}/>
+                                        <FormControlLabel onClick={this.progressStep} value="35.5%" control={<Radio color="primary"/>} label={<p style={styles.form}>31% - 40%%</p>}/>
+                                        <FormControlLabel onClick={this.progressStep} value="45.5%" control={<Radio color="primary"/>} label={<p style={styles.form}>41% - 50%</p>}/>  
+                                        <FormControlLabel onClick={this.setText} control={<Radio color="primary"/>} label={<p style={styles.form}>Other</p>}/>                      
                                     </RadioGroup>
                                 </FormControl>
                                     <br/>
@@ -157,5 +158,8 @@ const ProgressBar = (props) => {
     return <div className="filler" style={{ width: `${props.percentage}%` }} />
   }
 
-
-
+  const styles= {
+    form: {
+        fontSize: '2vh'
+    }
+}

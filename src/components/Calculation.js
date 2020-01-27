@@ -69,9 +69,8 @@ class Calculation extends Component {
                             <Paper elevation={3} className='paper'>
                                 <br/>
                                 <h3>Current Annual Sales</h3>
-                                
                                 <h2 style={{color: 'green'}}>${this.withCommas(props.number.toFixed())}</h2>
-                                
+                                <br/>
                             </Paper>
                         </div> )} 
                         </Spring>
@@ -88,7 +87,8 @@ class Calculation extends Component {
                             <Paper elevation={3} >
                                 <br/>
                                 <h3>Additional BDR Profit</h3>
-                                <h1 className="additionalProfit">${this.withCommas(props.number.toFixed())}</h1>                             
+                                <h1 className="additionalProfit">${this.withCommas(props.number.toFixed())}</h1>    
+                                <br/>                         
                             </Paper>
                         </div>
                         )}
@@ -107,7 +107,8 @@ class Calculation extends Component {
                             <br/>
                                 <h3>Current Amount Lost to Internet</h3>
                                 <p>PND {values.loseInternet} based on industry average</p>
-                                <h2 style={{color: '#6f1502'}}>${this.withCommas(props.number.toFixed())}</h2>
+                                <h2 style={{color: 'red'}}>$-{this.withCommas(props.number.toFixed())}</h2>
+                                <br/>
                             </Paper>
                         </div>
                         )}
@@ -126,6 +127,7 @@ class Calculation extends Component {
                             <br/>
                                 <h3>Potential Market Share Maximum</h3>
                                 <h2 style={{color: 'blue'}}>${this.withCommas(props.number.toFixed())}</h2>
+                                <br/>
                             </Paper>
                         </div>
                         )}
@@ -134,6 +136,7 @@ class Calculation extends Component {
                         <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
                             <h3 style={{ color: 'white', padding: '4px'}}>Enter email to be sent results</h3>
                         </div>
+                        <br/>
                         <div style={{display: `${this.state.errorMsg}`}}>
                             <Alert severity='error'><AlertTitle>Please enter email address</AlertTitle></Alert>
                         </div>
@@ -186,6 +189,5 @@ class Calculation extends Component {
         )
     }
 } 
-
 
 export default Calculation

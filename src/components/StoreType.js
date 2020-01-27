@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {    MuiThemeProvider, RadioGroup, CardContent, 
             AppBar, Radio, FormControlLabel, FormControl, 
-            Card } from '@material-ui/core'
+            Card, Typography } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
 import '../LandingPage.css'
 import { Spring } from 'react-spring/renderprops'
@@ -53,8 +53,8 @@ export default class StoreType extends Component {
                         <br/>
                         <br/>
                         <Spring 
-                            from={{  marginTop: '1500px'}}
-                            to={{  marginTop: '0px'}}>
+                            from={{  opacity: 0}}
+                            to={{  opacity: 1}}>
                             { props => (
                         <div style={props}>
                             <Card className='card'>
@@ -65,15 +65,15 @@ export default class StoreType extends Component {
                                         <br/>
                                         <br/>
                                     <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
-                                        <h3 style={{ color: 'white', padding: '4px'}}>What Type of Retail Store do you have?</h3>
+                                        <h3 style={{ color: 'white', padding: '8px'}}>What type of retail store do you have?</h3>
                                         </div>
                                         <br/>
-                                    <FormControl component="fieldset" >
-                                        <RadioGroup style={{fontSize: '50px'}} onChange={handleChange('storeType')} defaultValue={values.storeType}>
-                                            <FormControlLabel onClick={this.progressStep}   value="Ski Shop" control={<Radio color="primary"/>} label="Ski Shop" />
-                                            <FormControlLabel onClick={this.progressStep}   value="Snowboard Shop" control={<Radio color="primary"/>} label="Snowboard Shop" />
-                                            <FormControlLabel onClick={this.progressStep}   value="Ski + Snowboard Shop" control={<Radio color="primary"/>} label="Ski + Snowboard Shop" />
-                                            <FormControlLabel onClick={this.progressStep}   value="Outdoor Gear + Wear" control={<Radio color="primary"/>} label="Outdoor Gear + Wear" />
+                                    <FormControl margin="dense">
+                                        <RadioGroup onChange={handleChange('storeType')} defaultValue={values.storeType}>
+                                            <FormControlLabel  onClick={this.progressStep} value="Ski Shop" control={<Radio color="primary" />} label={<p style={styles.form}>Ski Shop</p>}/>
+                                            <FormControlLabel onClick={this.progressStep} value="Snowboard Shop" control={<Radio color="primary"/>} label={<p style={styles.form}>Snowboard Shop</p>} />
+                                            <FormControlLabel onClick={this.progressStep} value="Ski + Snowboard Shop" control={<Radio color="primary"/>} label={<p style={styles.form}>Ski + Snowboard Shop</p>}/>
+                                            <FormControlLabel onClick={this.progressStep} value="Outdoor Gear + Wear" control={<Radio color="primary"/>} label={<p style={styles.form}>Outdoor Gear + Wear</p>}/>
                                         </RadioGroup>
                                     </FormControl>
                                     <br/>
@@ -99,6 +99,11 @@ export default class StoreType extends Component {
                 
             </div>
         )
+    }
+}
+const styles= {
+    form: {
+        fontSize: '2vh'
     }
 }
 

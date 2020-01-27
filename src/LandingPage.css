@@ -102,12 +102,11 @@
 .card{
     margin-bottom: 3vh;
     max-width: 60%;
-    min-width: 45%;
+    min-width: 55%;
     max-height: 90%;
     display: inline-block;
     box-shadow: 6px 6px;
 }
-
 
 .step{
     font-size: 15px;
@@ -391,11 +390,13 @@ and (max-device-width : 500px){
         display: grid;
     }
     .title{
-        font-size: 4vh;
-        padding: 2vh;
-        padding-top: 25%;
+        font-size: 5vh;
+        padding: 1vh;
+        padding-top: 20%;
         font-family: 'Roboto', sans-serif;
+        
     }
+
     .question{
         font-size: 3vh;
         padding: 3vh;
@@ -409,7 +410,7 @@ and (max-device-width : 500px){
     }
     
     .statement2{
-        font-size: 3vh;
+        font-size: 4vh;
         padding: 40px;
         font-family: 'Roboto', sans-serif;
     }
@@ -501,4 +502,5 @@ and (max-device-width : 500px){
     .email{
         width: 65%
     }
+
 }
