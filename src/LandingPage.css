@@ -174,6 +174,10 @@
       max-height: 15vh;
   }
 
+  .alert{
+      font-size: 2vh;
+  }
+
 /* Ipad  */
 @media only screen and (max-width: 1025px){
 
@@ -195,6 +199,14 @@
     }
 
     .button{
+        color: white;
+        min-width: 45%;
+        min-height: 4%;
+        margin: 25;
+        background-color: #6f1502;
+        font-family: 'Roboto';
+        border-radius: 10px;
+        margin-top: 3vh;
         font-size: 50px;
         padding: 5px;
         border: 4px solid white;
@@ -296,6 +308,11 @@
         color: green;
         font-size: 65px
     }
+
+    .step{
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
 }
 
 /* Ipad Landscape */
@@ -380,6 +397,11 @@ and (orientation : landscape) {
 }
 }
 
+.step{
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
 @media only screen 
 and (max-device-width : 500px){
 
@@ -417,7 +439,8 @@ and (max-device-width : 500px){
 
     .button{
         margin-top: 7vh;
-        font-size: 50px;
+        font-size: 55px;
+        min-width: 55vw;
         padding: 5px;
         border: 4px solid white;
     }
@@ -428,7 +451,7 @@ and (max-device-width : 500px){
         min-height: 10%;
         background-color: #151856;
         font-family: 'Roboto';
-        font-size: 35px;
+        font-size: 50px;
         border-radius: 10px;
         margin: 2vh;
         padding: 5px;
@@ -440,7 +463,7 @@ and (max-device-width : 500px){
         min-height: 10%;
         background-color: #6f1502;
         font-family: 'Roboto';
-        font-size: 35px;
+        font-size: 50px;
         border-radius: 10px;
         margin: 2vh;
         padding: 5px;
@@ -478,7 +501,7 @@ and (max-device-width : 500px){
     }
 
     .lastbackground{
-        height: 100vh;
+        height: 105vh;
     }
 
     .container{
@@ -502,5 +525,25 @@ and (max-device-width : 500px){
     .email{
         width: 65%
     }
+
+    .step{
+        font-size: 34px;
+        padding-bottom: 1px;
+        padding-top: 15px
+    }
+
+    .alert{
+        font-size: 2vh;
+    }
+
+    .progress-bar {
+        justify-content: center;
+        display: inline-block;
+        height: 20px;
+        width: 500px;
+        border-radius: 50px;
+        border: 2px solid rgb(37, 37, 37);
+        background: rgb(255, 255, 255);
+      }
 
 }

@@ -96,7 +96,7 @@ export default class LastYear extends Component {
                                     <br/>
                                     <br/>
                                 <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
-                                    <h3 style={{ color: 'white', padding: '8px'}}>What (%) of your sales were last year’s product?</h3>
+                                    <h3 style={{ color: 'white', padding: '8px', fontSize: '150%'}}>What (%) of your sales were last year’s product?</h3>
                                 </div>
                                     <br/>
                                 <FormControl component="fieldset" >
@@ -132,7 +132,7 @@ export default class LastYear extends Component {
                                 >   calculate results
                                 </button>
                                 <div style={{display: `${this.state.alertDisplay}`}}>
-                                <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
+                                <Alert severity='error'><AlertTitle><p className='alert'>Please select an option</p></AlertTitle></Alert>
                                 </div>
                             </CardContent>
                         </Card>
@@ -160,6 +160,7 @@ const ProgressBar = (props) => {
 
   const styles= {
     form: {
-        fontSize: '2vh'
+        fontSize: '2vh',
+        padding: '10px'
     }
 }

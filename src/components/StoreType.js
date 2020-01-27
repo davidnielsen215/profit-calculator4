@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {    MuiThemeProvider, RadioGroup, CardContent, 
             AppBar, Radio, FormControlLabel, FormControl, 
-            Card, Typography } from '@material-ui/core'
+            Card } from '@material-ui/core'
 import EntireLogo from '../images/EntireLogo.png'
 import '../LandingPage.css'
 import { Spring } from 'react-spring/renderprops'
@@ -65,7 +65,7 @@ export default class StoreType extends Component {
                                         <br/>
                                         <br/>
                                     <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
-                                        <h3 style={{ color: 'white', padding: '8px'}}>What type of retail store do you have?</h3>
+                                        <h3 style={{ color: 'white', padding: '8px', fontSize: '150%'}}>What type of retail store do you have?</h3>
                                         </div>
                                         <br/>
                                     <FormControl margin="dense">
@@ -82,7 +82,7 @@ export default class StoreType extends Component {
                                     onClick={this.continue}>continue
                                 </button>
                                 <div style={{display: `${this.state.alertDisplay}`}}>
-                                <Alert severity='error'><AlertTitle>Please select an option</AlertTitle></Alert>
+                                <Alert severity='error'><AlertTitle><p className='alert'>Please select an option</p></AlertTitle></Alert>
                                 </div>
                                 </CardContent>
                             </Card>
@@ -103,7 +103,8 @@ export default class StoreType extends Component {
 }
 const styles= {
     form: {
-        fontSize: '2vh'
+        fontSize: '2.3vh',
+        padding: '10px'
     }
 }
 
