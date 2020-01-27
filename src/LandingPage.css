@@ -74,7 +74,7 @@
 .title{
     font-size: 55px;
     padding: 20px;
-    padding-top: 17%;
+    padding-top: 15%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -97,9 +97,9 @@
 }
 
 .logo{
-    padding-top: 35%;
+    padding-top: 23%;
     width: 55%;
-    margin: 10%;
+    margin: 7%;
 }
 
 .card{
@@ -305,7 +305,8 @@
         /* height: 15%; */
     }
     .other{
-        width: 35%;
+        width: 25%;
+        height: 60%
     }
     .email{
         width: 35%
@@ -528,7 +529,7 @@ and (max-device-width : 500px){
         width: 100vw;
     }
     .other{
-        width: 55%;
+        width: 35%;
     }
     .email{
         width: 65%

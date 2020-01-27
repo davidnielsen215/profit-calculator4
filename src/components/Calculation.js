@@ -138,7 +138,7 @@ class Calculation extends Component {
                         </div>
                         <br/>
                         <div style={{display: `${this.state.errorMsg}`}}>
-                            <Alert severity='error'><AlertTitle><p className='alert'>Please enter email address</p></AlertTitle></Alert>
+                            <Alert severity='error'><AlertTitle><p className='alert'>Please enter an email address</p></AlertTitle></Alert>
                         </div>
                         <div style={{display: `${this.state.successMsg}`}}>
                             <Alert severity='success'><AlertTitle><p className='alert'>Information Submitted</p></AlertTitle></Alert>

@@ -13,9 +13,6 @@ export default class LandingPage extends Component {
     render() {
         
         return (
-            
-            
-
                     <div className='maincont'>
                         <div className='container1'>
                         <Spring 
