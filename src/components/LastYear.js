@@ -103,7 +103,7 @@ export default class LastYear extends Component {
                                     <RadioGroup onChange={handleChange('lastYear')} defaultValue={values.lastYear}>
                                         <FormControlLabel onClick={this.progressStep} value="15%" control={<Radio color="primary"/>} label={<p style={styles.form}>10% - 20%</p>}/>
                                         <FormControlLabel onClick={this.progressStep}value="25.5%" control={<Radio color="primary"/>} label={<p style={styles.form}>21% - 30%</p>}/>
-                                        <FormControlLabel onClick={this.progressStep} value="35.5%" control={<Radio color="primary"/>} label={<p style={styles.form}>31% - 40%%</p>}/>
+                                        <FormControlLabel onClick={this.progressStep} value="35.5%" control={<Radio color="primary"/>} label={<p style={styles.form}>31% - 40%</p>}/>
                                         <FormControlLabel onClick={this.progressStep} value="45.5%" control={<Radio color="primary"/>} label={<p style={styles.form}>41% - 50%</p>}/>  
                                         <FormControlLabel onClick={this.setText} control={<Radio color="primary"/>} label={<p style={styles.form}>Other</p>}/>                      
                                     </RadioGroup>
