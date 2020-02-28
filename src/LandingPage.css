@@ -13,19 +13,27 @@
     min-width: 30%;
     min-height: 4%;
     margin: 25;
-    background-color: #6f1502;
+    background-color: black ;
     font-family: 'Roboto';
     font-size: 25px;
     border-radius: 10px;
     margin-top: 3vh;
-    cursor: pointer
+    cursor: pointer;
+    padding: 5px;
+}
+
+.button:hover{
+    transition: .5s;
+    color: black;
+    border: 1px solid white;
+    background-color: white ;
 }
 
 .continueButton{
     color: white;
     min-width: 15vw;
     min-height: 5%;
-    background-color: #151856;
+    background-color: rgba(63,84,184,1);
     font-family: 'Roboto';
     font-size: 25px;
     border-radius: 10px;
@@ -38,7 +46,7 @@
     color: white;
     min-width: 15vw;
     min-height: 5%;
-    background-color: #6f1502;
+    background-color: #84b95c;
     font-family: 'Roboto';
     font-size: 25px;
     border-radius: 10px;
@@ -50,16 +58,16 @@
 .background{
     min-height: 100vh;
     max-height: 115vh;
-    background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
+    background: black;
 }
 .lastbackground{
     min-height: 100vh;
-    background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
+    background: black;
 }
 .container{
     margin-top: 0px; 
     color: white;
-    background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
+    background: black;
     height: 100vh;
     width: 70vw;
     /* margin-left: 50vw; */
@@ -97,9 +105,11 @@
 }
 
 .logo{
-    padding-top: 23%;
+    padding-top: 50%;
+    align-items: center;
+    display: inline-flex;
     width: 55%;
-    margin: 7%;
+    margin: auto;
 }
 
 .card{
@@ -116,7 +126,7 @@
 }
 
 .entirelogo{
-    width: 35%;
+    width: 15%;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     /* padding: 4px; */
@@ -130,10 +140,12 @@
     width: 55%;
     display: 'inline-block';
     justify-content: 'space-evenly';
-    align-items: 'center'
+    align-items: 'center';
+    padding-top: 40px;
 }
+
 .lastlogo{
-    width: 50%
+    width: 30%
 }
 .progress{
     width: 100vw;
@@ -197,7 +209,7 @@
     }
     .landinglogo{
         padding-top: 1vh;
-        width: 70%;
+        width: 40%;
         display: 'inline-block';
         justify-content: 'space-evenly';
         align-items: 'center'
@@ -208,7 +220,7 @@
         min-width: 45%;
         min-height: 4%;
         margin: 25;
-        background-color: #6f1502;
+        background-color: black;
         font-family: 'Roboto';
         border-radius: 10px;
         margin-top: 3vh;
@@ -242,7 +254,6 @@
     .background{
         min-height: 100vh;
         max-height: 116vh;
-        background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
     }
     .question{
         font-size: 65px;
@@ -262,7 +273,6 @@
     .container{
         margin-top: 0px; 
         color: white;
-        background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
         height: 88vh;
         margin: none;
         width: 100vw;
@@ -300,7 +310,7 @@
 
     .entirelogo{
         display: inline-block;
-        width: 60%;
+        width: 40%;
         background-color: none;
         /* height: 15%; */
     }
@@ -331,8 +341,7 @@ and (orientation : landscape) {
   .container{
       margin-top: 0px; 
       color: white;
-      background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
-      height: 88vh;
+    height: 88vh;
       width: 100vw;
   }
   .container1{
@@ -385,7 +394,6 @@ and (orientation : landscape) {
 .background{
     height: 100%;
     max-height: 110%;
-    background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
 }
 
 .lastbackground{
@@ -495,7 +503,7 @@ and (max-device-width : 500px){
     }
 
     .entirelogo{
-        width: 75%;
+        width: 55%;
         background-color: rgb(255, 255, 255);
         border-radius: 5px;
         padding: 4px;
@@ -507,7 +515,7 @@ and (max-device-width : 500px){
     }
 
     .lastlogo{
-        width: 80%
+        width: 40%
     }
 
     .lastbackground{
@@ -518,7 +526,6 @@ and (max-device-width : 500px){
     .container{
         margin-top: 0px; 
         color: white;
-        background: radial-gradient(circle, rgba(21,24,86,1) 0%, rgba(0,14,45,1) 100%);
         height: 92vh;
         width: 100vw;
         margin: none;

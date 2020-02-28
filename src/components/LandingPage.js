@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // import { Button } from '@material-ui/core'
 import '../LandingPage.css'
-import Logo from '../images/Logo.png' 
-import EntireLogo from '../images/EntireLogo.png'
+import Logo from '../industry_gears/colorful.png' 
+import EntireLogo from '../industry_gears/VLORM_logo2.png'
 import { Spring } from 'react-spring/renderprops'
 
 export default class LandingPage extends Component {

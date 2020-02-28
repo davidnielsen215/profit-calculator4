@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { MuiThemeProvider, RadioGroup, AppBar, FormControlLabel, 
     Radio, FormControl, TextField, Card, CardContent } from '@material-ui/core'
 import NumberFormat from 'react-number-format'
-import EntireLogo from '../images/EntireLogo.png'
+import EntireLogo from '../industry_gears/VLORM_logo2.png'
 import { Spring } from 'react-spring/renderprops'
 import { Alert, AlertTitle } from '@material-ui/lab'
 
@@ -95,7 +95,7 @@ export default class NetProfit extends Component {
                                 <ProgressBar percentage={this.state.percentage} />
                                     <br/>
                                     <br/>
-                                <div style={{background: 'linear-gradient(90deg, rgba(0,73,176,1) 0%, rgba(0,19,119,1) 100%)', borderRadius: '5px', height: '10%'}}>
+                                <div style={{background: 'linear-gradient(135deg, rgba(63,84,184,1) 0%, rgba(65,197,226,1) 59%, rgba(137,185,101,1) 94%)', borderRadius: '5px', height: '10%'}}>
                                     <h3 style={{ color: 'white', padding: '8px', fontSize: '150%'}}>What was your net profit (%) from previous year?</h3>
                                 </div>
                                     <br/>
