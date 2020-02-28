@@ -3,6 +3,36 @@
     padding: 0;
 }
 
+
+@import url('https://fonts.googleapis.com/css?family=nunito');
+
+
+.logo-container{
+    padding-top: 50%;
+}
+
+.logo{
+    margin-top: 50%;
+    align-items: center;
+    display: inline-flex;
+    width: 55%;
+    /* margin: auto; */
+}
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 .maincont{
     display: flex; 
 }
@@ -14,10 +44,10 @@
     min-height: 4%;
     margin: 25;
     background-color: black ;
-    font-family: 'Roboto';
+    font-family: 'nunito';
     font-size: 25px;
     border-radius: 10px;
-    margin-top: 3vh;
+    margin-top: 9vh;
     cursor: pointer;
     padding: 5px;
 }
@@ -34,12 +64,15 @@
     min-width: 15vw;
     min-height: 5%;
     background-color: rgba(63,84,184,1);
-    font-family: 'Roboto';
+    font-family: 'nunito';
     font-size: 25px;
     border-radius: 10px;
     margin: 3vh;
     padding: 3px;
     cursor: pointer;
+}
+.continueButton:hover{
+    background-color: rgb(34, 53, 148);
 }
 
 .previousButton{
@@ -47,12 +80,15 @@
     min-width: 15vw;
     min-height: 5%;
     background-color: #84b95c;
-    font-family: 'Roboto';
+    font-family: 'nunito';
     font-size: 25px;
     border-radius: 10px;
     margin: 3vh;
     padding: 3px;
     cursor: pointer
+}
+.previousButton:hover{
+    background-color: #719b50;
 }
 
 .background{
@@ -82,35 +118,29 @@
 .title{
     font-size: 55px;
     padding: 20px;
-    padding-top: 15%;
-    font-family: 'Roboto', sans-serif;
+    padding-top: 19%;
+    font-family: 'nunito', sans-serif;
 }
 
 .question{
     font-size: 45px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 
 .statement{
     font-size: 25px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 
 .statement2{
     font-size: 30px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 
-.logo{
-    padding-top: 50%;
-    align-items: center;
-    display: inline-flex;
-    width: 55%;
-    margin: auto;
-}
+
 
 .card{
     margin-bottom: 3vh;
@@ -203,9 +233,9 @@
     }
     .title{
     font-size: 65px;
-    padding: 20px;
+    padding: 25px;
     padding-top: 20%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
     }
     .landinglogo{
         padding-top: 1vh;
@@ -221,9 +251,9 @@
         min-height: 4%;
         margin: 25;
         background-color: black;
-        font-family: 'Roboto';
+        font-family: 'nunito';
         border-radius: 10px;
-        margin-top: 3vh;
+        margin-top: 7vh;
         font-size: 40px;
         padding: 5px;
         border: 4px solid white;
@@ -233,7 +263,7 @@
         min-width: 30vw;
         min-height: 5%;
         background-color: #151856;
-        font-family: 'Roboto';
+        font-family: 'nunito';
         font-size: 35px;
         border-radius: 10px;
         margin: 3vh;
@@ -245,7 +275,7 @@
         min-width: 30vw;
         min-height: 5%;
         background-color: #84b95c;
-        font-family: 'Roboto';
+        font-family: 'nunito';
         font-size: 35px;
         border-radius: 10px;
         margin: 3vh;
@@ -360,24 +390,24 @@ and (orientation : landscape) {
     font-size: 45px;
     padding: 20px;
     padding-top: 6%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 .question{
     font-size: 35px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 
 .statement{
     font-size: 25px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 
 .statement2{
     font-size: 20px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 .button{
     color: white;
@@ -386,7 +416,7 @@ and (orientation : landscape) {
     min-height: 5%;
     margin: 25;
     background-color: #6f1502;
-    font-family: 'Roboto';
+    font-family: 'nunito';
     font-size: 25px;
     border-radius: 10px;
     margin-top: 3vh;
@@ -432,26 +462,26 @@ and (max-device-width : 500px){
         font-size: 5vh;
         padding: 1vh;
         padding-top: 20%;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'nunito', sans-serif;
         
     }
 
     .question{
         font-size: 3vh;
         padding: 3vh;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'nunito', sans-serif;
     }
     
     .statement{
         font-size: 3vh;
         padding: 20px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'nunito', sans-serif;
     }
     
     .statement2{
         font-size: 4vh;
         padding: 40px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'nunito', sans-serif;
     }
 
     .button{
@@ -468,7 +498,7 @@ and (max-device-width : 500px){
         min-width: 55vw;
         min-height: 15%;
         background-color: #151856;
-        font-family: 'Roboto';
+        font-family: 'nunito';
         font-size: 50px;
         border-radius: 45px;
         margin: 2vh;

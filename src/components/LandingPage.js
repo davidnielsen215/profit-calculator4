@@ -22,7 +22,10 @@ export default class LandingPage extends Component {
                         >
                         { props => (
                         <div style={props}>
+                            {/* <div className='logo-container'> */}
+
                             <img className='logo' src={Logo} alt=""/>
+                            {/* </div> */}
                             <img className='landinglogo' src={EntireLogo} alt=""/>
                             </div>
                             )}
