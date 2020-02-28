@@ -41,9 +41,9 @@ export default class LandingPage extends Component {
                         { props => (
                         <div style={props}>
                             <h1 className='title'>PROFIT CALCULATOR</h1>
-                            <h1 className='question'><b>What's your number?</b></h1>
+                            
                             <h3 className='statement'><i>Find out how much extra profit you'll make with us</i></h3>
-                            <h1 className='statement2'>Double Your Profit!</h1>
+
                             <button onClick={this.continue}
                             className='button'>B E G I N</button>
 

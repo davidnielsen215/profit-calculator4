@@ -118,7 +118,7 @@
 .title{
     font-size: 55px;
     padding: 20px;
-    padding-top: 19%;
+    padding-top: 25%;
     font-family: 'nunito', sans-serif;
 }
 
@@ -234,7 +234,7 @@
     .title{
     font-size: 65px;
     padding: 25px;
-    padding-top: 20%;
+    padding-top: 25%;
     font-family: 'nunito', sans-serif;
     }
     .landinglogo{
@@ -389,7 +389,7 @@ and (orientation : landscape) {
   .title{
     font-size: 45px;
     padding: 20px;
-    padding-top: 6%;
+    padding-top: 10%;
     font-family: 'nunito', sans-serif;
 }
 .question{
@@ -415,7 +415,7 @@ and (orientation : landscape) {
     min-width: 40%;
     min-height: 5%;
     margin: 25;
-    background-color: #6f1502;
+    background-color: black;
     font-family: 'nunito';
     font-size: 25px;
     border-radius: 10px;
@@ -461,7 +461,7 @@ and (max-device-width : 500px){
     .title{
         font-size: 5vh;
         padding: 1vh;
-        padding-top: 20%;
+        padding-top: 35%;
         font-family: 'nunito', sans-serif;
         
     }
